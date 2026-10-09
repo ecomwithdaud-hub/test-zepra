@@ -62,9 +62,9 @@ const navigationGroups = [
   {
     title: "Resources",
     links: [
-      { label: "Blogs", href: "/case-studies" },
       { label: "Case Studies", href: "/case-studies" },
       { label: "Portfolio", href: "/website-development" },
+      { label: "Blogs", href: "/case-studies" },
       { label: "Guides", href: "/services" },
       { label: "News", href: "/case-studies" },
     ],
@@ -73,6 +73,7 @@ const navigationGroups = [
     title: "Company",
     links: [
       { label: "About Us", href: "/about" },
+      { label: "Case Studies", href: "/case-studies" },
       { label: "Careers", href: "/contact" },
       { label: "Contact Us", href: "/contact" },
       { label: "Partner Program", href: "/contact" },

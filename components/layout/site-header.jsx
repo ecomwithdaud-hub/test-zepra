@@ -33,6 +33,7 @@ const navTranslationKeys = {
   "/": "nav.home",
   "/about": "nav.about",
   "/services": "nav.services",
+  "/case-studies": "nav.caseStudies",
   "/contact": "nav.contact",
 };
 

@@ -126,6 +126,8 @@ export function MobileFooter() {
     { label: "WhatsApp", href: siteMeta.whatsappLink },
   ];
   const legalLinks = [
+    { label: t("nav.caseStudies") || "Case Studies", href: "/case-studies" },
+    { label: t("nav.websiteDevelopment") || "Websites", href: "/website-development" },
     { label: t("footer.privacy"), href: "/privacy-policy" },
     { label: t("footer.terms"), href: "/terms-of-use" },
     { label: t("footer.security"), href: "/privacy-policy" },
