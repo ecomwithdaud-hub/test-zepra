@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, Check, ChevronRight } from "lucide-react";
 
 import { ContactSection } from "@/components/sections/contact-section";
+import { UsaDemoShowcase } from "@/components/sections/usa-demo-showcase";
 import { serviceIconMap } from "@/components/shared/service-card";
 import { CyberCircuitBackground } from "@/components/ui/CyberCircuitBackground";
 import { services } from "@/lib/site";
@@ -123,6 +124,10 @@ export default async function ServiceDetailPage({ params }) {
           </div>
         </div>
       </section>
+
+      {slug === "web-development" ? (
+        <UsaDemoShowcase initialLimit={12} showViewAllLink={true} />
+      ) : null}
 
       <section className="section-shell bg-slate-950 text-white">
         <div className="container">

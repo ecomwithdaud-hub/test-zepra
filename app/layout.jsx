@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Sora } from "next/font/google";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { LanguageProvider } from "@/components/providers/language-provider";
+import { TechCursor } from "@/components/ui/TechCursor";
 import { siteMeta } from "@/lib/site";
 
 import "./globals.css";
@@ -54,6 +55,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth">
       <body className={`${bodyFont.variable} ${displayFont.variable} font-sans`}>
         <LanguageProvider>
+          <TechCursor />
           <div className="relative min-h-screen overflow-x-clip">
             <SiteHeader />
             <div aria-hidden="true" className="h-24" />

@@ -13,7 +13,7 @@ export function WikiRgShowcase() {
   const detailScreens = wikiRgScreens.filter((item) => !item.featured);
 
   return (
-    <section className="section-shell bg-white/45">
+    <section id="wiki-rg-case-study" className="section-shell scroll-mt-28 bg-white/45">
       <div className="container">
         <SectionHeading
           eyebrow={content.eyebrow}

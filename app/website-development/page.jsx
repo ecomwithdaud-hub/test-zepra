@@ -1,16 +1,20 @@
+import { EnterpriseCaseStudies } from "@/components/sections/enterprise-case-studies";
 import { PortfolioPreview } from "@/components/sections/portfolio-preview";
+import { UsaDemoShowcase } from "@/components/sections/usa-demo-showcase";
 import { WikiRgShowcase } from "@/components/sections/wiki-rg-showcase";
 
 export const metadata = {
-  title: "Website Development",
+  title: "Website Development | 24+ Live Client Demo Websites & Web Platforms",
   description:
-    "Explore Zepra Tech website development work across live business deployments, premium frontend showcases, ecommerce builds, and launch-ready web systems.",
+    "Explore Zepra Tech website development work across 24 live US industry demo websites, client deployments, premium frontend showcases, ecommerce builds, and launch-ready web systems.",
 };
 
 export default function WebsiteDevelopmentPage() {
   return (
     <>
-      <PortfolioPreview showCta={false} />
+      <UsaDemoShowcase initialLimit={24} showViewAllLink={false} />
+      <PortfolioPreview showCta={true} />
+      <EnterpriseCaseStudies />
       <WikiRgShowcase />
     </>
   );
