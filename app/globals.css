@@ -98,8 +98,12 @@
     white-space: nowrap;
   }
 
-  nav > a {
+  nav > a,
+  header nav > *,
+  header nav a,
+  header nav button {
     white-space: nowrap;
+    flex-shrink: 0;
   }
 
   svg {

@@ -156,17 +156,17 @@ export function SiteHeader() {
       <div className="container pointer-events-none">
         <div
           className={cn(
-            "pointer-events-auto relative mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full border border-slate-200/50 bg-white/90 px-5 shadow-lg backdrop-blur-md [backface-visibility:hidden] transition-all duration-300 lg:px-7",
-            scrolled ? "py-2.5 shadow-premium" : "py-4",
+            "pointer-events-auto relative mx-auto flex max-w-7xl items-center justify-between gap-3 rounded-full border border-slate-200/60 bg-white/95 px-4 shadow-lg backdrop-blur-md [backface-visibility:hidden] transition-all duration-300 xl:gap-5 xl:px-6",
+            scrolled ? "py-2.5 shadow-premium" : "py-3.5",
           )}
         >
-          <Link href="/" aria-label="Zepra Tech home">
+          <Link href="/" aria-label="Zepra Tech home" className="shrink-0">
             <Logo compact />
           </Link>
 
           <nav
             ref={navRef}
-            className="relative hidden items-center gap-2 lg:flex"
+            className="relative hidden shrink-0 items-center gap-1 lg:flex xl:gap-1.5"
             onMouseLeave={hidePill}
             onBlur={(event) => {
               if (!event.currentTarget.contains(event.relatedTarget)) hidePill();
@@ -193,27 +193,27 @@ export function SiteHeader() {
                 return (
                   <div
                     key={item.label}
-                    className="group relative"
+                    className="group relative shrink-0"
                     onMouseEnter={(event) => movePillTo(event.currentTarget)}
                     onFocus={(event) => movePillTo(event.currentTarget)}
                   >
                     <button
                       type="button"
                       className={cn(
-                        "relative z-10 flex items-center rounded-full px-4 py-2 pr-9 text-sm font-medium text-slate-600 transition-colors duration-300 hover:text-slate-950",
+                        "relative z-10 inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full px-3.5 py-2 text-sm font-medium text-slate-600 transition-colors duration-300 hover:text-slate-950 xl:px-4",
                         isActive && "bg-slate-950 text-white shadow-soft hover:bg-slate-900 hover:text-white",
                       )}
                       aria-haspopup="menu"
                       aria-expanded={isActive}
                     >
-                      {isServicesMenu ? t("nav.services") : t("nav.projects")}
+                      <span>{isServicesMenu ? t("nav.services") : t("nav.projects")}</span>
+                      <ChevronDown
+                        className={cn(
+                          "h-4 w-4 shrink-0 transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180",
+                          isActive ? "text-white" : "text-slate-500",
+                        )}
+                      />
                     </button>
-                    <ChevronDown
-                      className={cn(
-                        "pointer-events-none absolute right-3 top-1/2 z-10 h-4 w-4 -translate-y-1/2 transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180",
-                        isActive ? "text-white" : "text-slate-500",
-                      )}
-                    />
                     <div className="invisible absolute left-0 top-full z-[9999] isolate w-[min(440px,90vw)] translate-y-2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
                       <div className="relative isolate z-[9999] rounded-xl border border-white/10 bg-brand-navy/95 p-3 shadow-2xl backdrop-blur-md">
                         <div className="space-y-1">
@@ -270,7 +270,7 @@ export function SiteHeader() {
                   onMouseEnter={(event) => movePillTo(event.currentTarget)}
                   onFocus={(event) => movePillTo(event.currentTarget)}
                   className={cn(
-                    "relative z-10 rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition-colors duration-300 hover:text-slate-950",
+                    "relative z-10 inline-flex shrink-0 items-center whitespace-nowrap rounded-full px-3.5 py-2 text-sm font-medium text-slate-600 transition-colors duration-300 hover:text-slate-950 xl:px-4",
                     isActive && "bg-slate-950 text-white shadow-soft hover:bg-slate-900 hover:text-white",
                   )}
                 >
@@ -280,29 +280,33 @@ export function SiteHeader() {
             })}
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
-            <Button asChild variant="outline">
-              <Link href="/services">{t("nav.viewServices")}</Link>
-            </Button>
-            <Button asChild className="group">
-              <Link href="/contact">
-                {t("nav.bookConsultation")}
-                <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            </Button>
+          <div className="flex shrink-0 items-center gap-2.5 xl:gap-3">
+            <div className="hidden items-center gap-2.5 lg:flex">
+              <Button asChild variant="outline" className="hidden shrink-0 whitespace-nowrap 2xl:inline-flex">
+                <Link href="/services">{t("nav.viewServices")}</Link>
+              </Button>
+              <Button asChild className="group shrink-0 whitespace-nowrap">
+                <Link href="/contact">
+                  {t("nav.bookConsultation")}
+                  <ChevronRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </div>
+
+            <div className="shrink-0">
+              <LanguageSwitcher />
+            </div>
+
+            <button
+              type="button"
+              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-900 shadow-soft transition-colors hover:border-primary/20 hover:text-primary lg:hidden"
+              onClick={() => setIsOpen((current) => !current)}
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
           </div>
-
-          <LanguageSwitcher />
-
-          <button
-            type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-900 shadow-soft transition-colors hover:border-primary/20 hover:text-primary lg:hidden"
-            onClick={() => setIsOpen((current) => !current)}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isOpen}
-          >
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
 
           <div
             aria-hidden="true"
