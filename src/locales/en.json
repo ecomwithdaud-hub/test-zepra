@@ -8,9 +8,11 @@
     "viewServices": "View Services",
     "bookConsultation": "Book a Consultation",
     "websiteDevelopment": "Website Development",
+    "caseStudies": "Case Studies",
     "socialMediaMarketing": "Social Media Marketing",
     "thumbnailDesigning": "Thumbnail Designing",
     "websiteDevelopmentDescription": "Live website deployments, frontend builds, and client-ready web delivery.",
+    "caseStudiesDescription": "Detailed engineering case studies, measurable business outcomes, and architecture breakdowns.",
     "socialMediaMarketingDescription": "Campaign examples, reporting snapshots, and growth marketing work.",
     "thumbnailDesigningDescription": "YouTube thumbnail concepts, bold covers, and visual storytelling layouts."
   },

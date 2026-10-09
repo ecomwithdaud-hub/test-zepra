@@ -62,11 +62,11 @@ const navigationGroups = [
   {
     title: "Resources",
     links: [
-      { label: "Blogs", href: "/portfolio" },
-      { label: "Case Studies", href: "/portfolio" },
-      { label: "Portfolio", href: "/portfolio" },
+      { label: "Blogs", href: "/case-studies" },
+      { label: "Case Studies", href: "/case-studies" },
+      { label: "Portfolio", href: "/website-development" },
       { label: "Guides", href: "/services" },
-      { label: "News", href: "/portfolio" },
+      { label: "News", href: "/case-studies" },
     ],
   },
   {

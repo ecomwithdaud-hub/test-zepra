@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import {
   ChevronDown,
   ChevronRight,
+  FileText,
   Globe,
   Image as ImageIcon,
   Megaphone,
@@ -23,6 +24,7 @@ import { serviceIconMap } from "@/components/shared/service-card";
 
 const projectIcons = {
   "/website-development": Globe,
+  "/case-studies": FileText,
   "/social-media-marketing": Megaphone,
   "/thumbnail-designing": ImageIcon,
 };
@@ -36,6 +38,7 @@ const navTranslationKeys = {
 
 const projectTranslationKeys = {
   "/website-development": "nav.websiteDevelopment",
+  "/case-studies": "nav.caseStudies",
   "/social-media-marketing": "nav.socialMediaMarketing",
   "/thumbnail-designing": "nav.thumbnailDesigning",
 };

@@ -8,9 +8,11 @@
     "viewServices": "Voir les services",
     "bookConsultation": "Réserver une consultation",
     "websiteDevelopment": "Développement Web",
+    "caseStudies": "Études de Cas",
     "socialMediaMarketing": "Marketing Réseaux Sociaux",
     "thumbnailDesigning": "Conception de Miniatures",
     "websiteDevelopmentDescription": "Déploiements de sites en direct, builds frontend et livraison web prête pour les clients.",
+    "caseStudiesDescription": "Études de cas d'ingénierie détaillées, résultats mesurables et architectures.",
     "socialMediaMarketingDescription": "Exemples de campagnes, aperçus de rapports et travaux de marketing de croissance.",
     "thumbnailDesigningDescription": "Concepts de miniatures YouTube, couvertures percutantes et mises en page visuelles."
   },

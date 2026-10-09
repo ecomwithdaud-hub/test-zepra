@@ -1,7 +1,5 @@
-import { EnterpriseCaseStudies } from "@/components/sections/enterprise-case-studies";
 import { PortfolioPreview } from "@/components/sections/portfolio-preview";
 import { UsaDemoShowcase } from "@/components/sections/usa-demo-showcase";
-import { WikiRgShowcase } from "@/components/sections/wiki-rg-showcase";
 
 export const metadata = {
   title: "Website Development | 24+ Live Client Demo Websites & Web Platforms",
@@ -14,8 +12,6 @@ export default function WebsiteDevelopmentPage() {
     <>
       <UsaDemoShowcase initialLimit={24} showViewAllLink={false} />
       <PortfolioPreview showCta={true} />
-      <EnterpriseCaseStudies />
-      <WikiRgShowcase />
     </>
   );
 }
