@@ -1,30 +1,31 @@
 "use client";
 
+import { useRef, useState } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
   ArrowUpRight,
   Bot,
   Check,
+  Cpu,
   Globe2,
   Layers3,
   Sparkles,
   Workflow,
 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import { HeroParticles } from "@/components/ui/HeroParticles";
-import { InfiniteMarquee } from "@/components/ui/InfiniteMarquee";
+import { TiltCard } from "@/components/ui/TiltCard";
 import { useLanguage } from "@/components/providers/language-provider";
 import { heroHighlights } from "@/lib/site";
 
 const capabilities = [
-  "Web platforms",
-  "AI automation",
-  "Ecommerce",
-  "Search growth",
-  "Paid media",
-  "Product design",
+  "WEB PLATFORMS",
+  "AI AUTOMATION",
+  "E-COMMERCE",
+  "UI/UX ATELIER",
+  "SEARCH GROWTH",
+  "CLOUD ARCHITECTURE",
 ];
 
 const highlightIcons = [Layers3, Bot, Sparkles];
@@ -33,151 +34,288 @@ export function HomeHero() {
   const { t } = useLanguage();
   const translatedHighlights = t("hero.highlights");
   const translatedCapabilities = t("hero.capabilities");
+  const sectionRef = useRef(null);
+  const [parallax, setParallax] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    if (!sectionRef.current) return;
+    const rect = sectionRef.current.getBoundingClientRect();
+    const normX = (e.clientX - rect.left) / rect.width - 0.5;
+    const normY = (e.clientY - rect.top) / rect.height - 0.5;
+    setParallax({ x: normX, y: normY });
+  };
+
+  const handleMouseLeave = () => {
+    setParallax({ x: 0, y: 0 });
+  };
+
+  const marqueeItems = [
+    ...capabilities,
+    ...capabilities,
+    ...capabilities,
+  ];
 
   return (
-    <section className="relative isolate overflow-hidden pb-8 pt-8 sm:pb-12 sm:pt-12 lg:pb-12 lg:pt-12">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_12%_8%,rgba(56,198,255,0.18),transparent_28%),radial-gradient(ellipse_at_88%_20%,rgba(18,119,255,0.14),transparent_30%),linear-gradient(180deg,rgba(239,247,255,0.7),rgba(248,251,255,0)_75%)]" />
+    <section
+      ref={sectionRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="relative isolate overflow-hidden bg-[#040812] pb-16 pt-12 text-white sm:pb-24 sm:pt-16 lg:pb-28 lg:pt-20"
+    >
+      {/* Ambient DevCrafter Multi-Color Radial Glows */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+      >
+        <div
+          className="absolute left-1/2 top-1/3 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-35 blur-[130px] transition-transform duration-500"
+          style={{
+            background:
+              "radial-gradient(circle at center, rgba(56, 198, 255, 0.45) 0%, transparent 70%)",
+            transform: `translate3d(${parallax.x * -40}px, ${parallax.y * -40}px, 0)`,
+          }}
+        />
+        <div
+          className="absolute -right-24 top-12 h-[440px] w-[440px] rounded-full opacity-30 blur-[130px] transition-transform duration-500"
+          style={{
+            background:
+              "radial-gradient(circle at center, rgba(16, 185, 129, 0.38) 0%, transparent 70%)",
+            transform: `translate3d(${parallax.x * 55}px, ${parallax.y * 55}px, 0)`,
+          }}
+        />
+        <div
+          className="absolute -left-24 bottom-12 h-[420px] w-[420px] rounded-full opacity-30 blur-[130px] transition-transform duration-500"
+          style={{
+            background:
+              "radial-gradient(circle at center, rgba(18, 119, 255, 0.45) 0%, transparent 70%)",
+            transform: `translate3d(${parallax.x * 35}px, ${parallax.y * -35}px, 0)`,
+          }}
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:64px_64px]" />
+      </div>
+
       <HeroParticles />
 
       <div className="container relative z-10">
-        <div className="grid items-center gap-6 lg:grid-cols-[1.02fr_0.98fr] lg:gap-6">
-          <div className="max-w-2xl">
-            <div className="eyebrow animate-slide-up">
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-cyan" />
-              {t("hero.eyebrow")}
-            </div>
-
-            <h1 className="mt-4 text-balance font-display text-[2.65rem] font-semibold leading-[1.04] text-slate-950 sm:text-6xl lg:text-[4.35rem]">
-              {t("hero.titleLead")} {" "}
-              <span className="headline-gradient">{t("hero.titleAccent")}</span>
-            </h1>
-            <p className="muted-copy mt-4 max-w-xl text-base sm:text-lg">
-              {t("hero.description")}
-            </p>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button
-                asChild
-                size="xl"
-                className="hover:shadow-cyanGlow motion-reduce:transform-none"
-              >
-                <Link href="/contact">
-                  {t("hero.projectCta")}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="xl"
-                variant="outline"
-                className="hover:shadow-cyanGlow motion-reduce:transform-none"
-              >
-                <Link href="/services">
-                  {t("hero.capabilitiesCta")}
-                  <ArrowUpRight className="h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-
-            <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm font-medium text-slate-600">
-              <span className="inline-flex items-center gap-2">
-                <Check className="h-4 w-4 text-emerald-600" />
-                {t("hero.ownership")}
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <Check className="h-4 w-4 text-emerald-600" />
-                {t("hero.scale")}
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <Check className="h-4 w-4 text-emerald-600" />
-                {t("hero.partner")}
-              </span>
-            </div>
+        {/* DevCrafter Centerpiece Hero with Orbiting 3D Floating Cards */}
+        <div className="relative mx-auto flex max-w-6xl flex-col items-center text-center">
+          {/* Floating Left 3D UX Card (Desktop) */}
+          <div
+            className="pointer-events-auto absolute -left-4 top-6 z-20 hidden xl:block"
+            style={{
+              transform: `translate3d(${parallax.x * -45}px, ${parallax.y * -35}px, 0) rotate(-6deg)`,
+              transition: "transform 220ms ease-out",
+            }}
+          >
+            <TiltCard
+              cursorLabel="DETAIL"
+              className="w-60 overflow-hidden rounded-3xl border border-white/15 bg-slate-950/75 p-3.5 shadow-[0_25px_60px_rgba(0,0,0,0.65)] backdrop-blur-xl"
+            >
+              <div className="relative h-28 w-full overflow-hidden rounded-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
+                  alt="Conversion UI/UX Design"
+                  className="h-full w-full object-cover grayscale transition-all duration-500 hover:grayscale-0"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <span className="absolute bottom-2 left-2.5 rounded-full border border-cyan-400/40 bg-slate-950/80 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-cyan-300">
+                  1.1s Edge Speed
+                </span>
+              </div>
+              <div className="mt-3 flex items-center justify-between px-1">
+                <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-slate-300">
+                  UI/UX Atelier
+                </span>
+                <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-400 shadow-[0_0_10px_#38c6ff]" />
+              </div>
+            </TiltCard>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[620px] lg:ml-auto">
-            <div className="absolute -inset-8 -z-10 rounded-full bg-sky-300/25 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[28px] border border-slate-700/70 bg-[#0B1220] p-5 text-white shadow-[0_32px_90px_rgba(15,35,65,0.28)] sm:p-7">
-              <div className="absolute inset-0 -z-0 bg-[radial-gradient(circle_at_86%_0%,rgba(18,119,255,0.28),transparent_38%),radial-gradient(circle_at_0%_100%,rgba(56,198,255,0.12),transparent_42%)]" />
-              <div className="relative">
-                <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
-                  <div>
-                    <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">
-                      {t("hero.systemLabel")}
-                    </div>
-                    <h2 className="mt-2 font-display text-lg font-semibold sm:text-xl">
-                      {t("hero.systemTitle")}
-                    </h2>
-                  </div>
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-200">
-                    <Workflow className="h-5 w-5" />
-                  </div>
-                </div>
-
-                <div className="mt-5 grid grid-cols-3 gap-2 rounded-2xl border border-white/10 bg-white/[0.04] p-2 text-center text-[11px] font-semibold text-slate-400 sm:gap-3 sm:p-3 sm:text-xs">
-                  <span className="rounded-xl bg-blue-500/15 px-2 py-2.5 text-blue-200">{t("hero.plan")}</span>
-                  <span className="rounded-xl bg-white/[0.04] px-2 py-2.5">{t("hero.build")}</span>
-                  <span className="rounded-xl bg-white/[0.04] px-2 py-2.5">{t("hero.improve")}</span>
-                </div>
-
-                <div className="mt-4 grid gap-3">
-                  {heroHighlights.map((item, index) => {
-                    const Icon = highlightIcons[index] || Globe2;
-                    const translatedItem = translatedHighlights?.[index] ?? item;
-
-                    return (
-                      <article
-                        key={item.title}
-                        className={`hero-highlight rounded-2xl border border-white/10 bg-white/[0.055] p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-200/30 hover:bg-white/[0.09] sm:p-5 ${index === 1 ? "hero-highlight-delay" : index === 2 ? "hero-highlight-delay-long" : ""}`}
-                      >
-                        <div className="flex items-start gap-3.5">
-                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-cyan-200/10 bg-cyan-300/10 text-cyan-200">
-                            <Icon className="h-5 w-5" />
-                          </span>
-                          <div>
-                            <h3 className="text-sm font-semibold text-white sm:text-base">
-                              {translatedItem.title}
-                            </h3>
-                            <p className="mt-1.5 text-xs leading-5 text-slate-300 sm:text-sm sm:leading-6">
-                              {translatedItem.description}
-                            </p>
-                          </div>
-                        </div>
-                      </article>
-                    );
-                  })}
-                </div>
-
-                <div className="mt-4 flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-slate-950/50 px-4 py-3">
-                  <div className="flex items-center gap-3">
-                    <span className="relative flex h-2.5 w-2.5">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-40 motion-reduce:animate-none" />
-                      <span className="relative inline-flex h-2.5 w-2.5 animate-live-pulse rounded-full bg-emerald-400 motion-reduce:animate-none" />
-                    </span>
-                    <span className="text-xs font-medium text-slate-300 sm:text-sm">
-                      {t("hero.connectedTeam")}
-                    </span>
-                  </div>
-                  <Sparkles className="h-4 w-4 shrink-0 text-cyan-200" />
+          {/* Floating Right 3D Engineering Card (Desktop) */}
+          <div
+            className="pointer-events-auto absolute -right-4 bottom-12 z-20 hidden xl:block"
+            style={{
+              transform: `translate3d(${parallax.x * 55}px, ${parallax.y * 45}px, 0) rotate(4deg)`,
+              transition: "transform 220ms ease-out",
+            }}
+          >
+            <TiltCard
+              cursorLabel="EXPLORE"
+              className="w-64 overflow-hidden rounded-3xl border border-emerald-400/30 bg-slate-950/80 p-3.5 shadow-[0_30px_70px_rgba(16,185,129,0.2)] backdrop-blur-xl"
+            >
+              <div className="relative h-32 w-full overflow-hidden rounded-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80"
+                  alt="Full-Stack Engineering"
+                  className="h-full w-full object-cover contrast-125 saturate-0 transition-all duration-500 hover:saturate-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
+                <div className="absolute bottom-3 left-3 text-left">
+                  <p className="text-xs font-bold uppercase tracking-[0.25em] text-white">
+                    Engineering
+                  </p>
+                  <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-300">
+                    +54% Avg Conversion
+                  </p>
                 </div>
               </div>
+            </TiltCard>
+          </div>
+
+          {/* Floating Top-Right Badge */}
+          <div
+            className="pointer-events-auto absolute right-[14%] top-2 z-20 hidden lg:block"
+            style={{
+              transform: `translate3d(${parallax.x * -25}px, ${parallax.y * 25}px, 0)`,
+              transition: "transform 220ms ease-out",
+            }}
+          >
+            <TiltCard className="flex h-20 w-20 items-center justify-center rounded-full border border-cyan-400/35 bg-white/[0.04] p-2 text-center shadow-2xl backdrop-blur-md">
+              <span className="text-[10px] font-extrabold uppercase leading-tight tracking-widest text-cyan-300">
+                24+ Live
+                <br />
+                US Demos
+              </span>
+            </TiltCard>
+          </div>
+
+          {/* Top Eyebrow Pill */}
+          <div className="inline-flex items-center gap-2.5 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.32em] text-cyan-300 shadow-[0_0_25px_rgba(56,198,255,0.2)]">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_10px_#34d399]" />
+            {t("hero.eyebrow")}
+          </div>
+
+          {/* Massive DevCrafter-Style Dual Stroked Display Headline */}
+          <div className="mt-6 select-none">
+            <div className="font-display text-[clamp(2.9rem,11vw,7.4rem)] font-black uppercase leading-[0.9] tracking-tight text-white drop-shadow-2xl">
+              DIGITAL
+            </div>
+            <div
+              className="font-display text-[clamp(2.9rem,11vw,7.4rem)] font-black uppercase leading-[0.92] tracking-tight text-transparent"
+              style={{
+                WebkitTextStroke: "2px rgba(56, 198, 255, 0.85)",
+              }}
+            >
+              PRESTIGE
             </div>
           </div>
+
+          {/* Subtitle Headline & Description */}
+          <h1 className="mt-5 max-w-3xl text-balance font-display text-xl font-semibold leading-snug text-slate-100 sm:text-3xl">
+            {t("hero.titleLead")}{" "}
+            <span className="bg-gradient-to-r from-cyan-300 via-sky-300 to-emerald-300 bg-clip-text text-transparent">
+              {t("hero.titleAccent")}
+            </span>
+          </h1>
+
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base lg:text-lg">
+            {t("hero.description")}
+          </p>
+
+          {/* DevCrafter-Inspired Floating Glass Pill CTA Bar */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5 rounded-full border border-white/15 bg-slate-950/75 p-2.5 shadow-[0_25px_70px_rgba(0,0,0,0.65)] backdrop-blur-2xl sm:gap-4 sm:px-5 sm:py-3">
+            <Link
+              href="/contact"
+              data-cursor="LET'S GO"
+              className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-emerald-400 px-6 text-xs font-extrabold uppercase tracking-[0.15em] text-slate-950 shadow-[0_0_30px_rgba(56,198,255,0.45)] transition-all duration-300 hover:scale-105 sm:h-12 sm:px-8 sm:text-sm"
+            >
+              <span>{t("hero.projectCta") || "Start a Project"}</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+
+            <div className="hidden h-7 w-px bg-white/15 sm:block" />
+
+            <Link
+              href="/website-development"
+              data-cursor="EXPLORE"
+              className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-5 text-xs font-bold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:border-cyan-400/50 hover:bg-white/10 sm:h-12 sm:px-7 sm:text-sm"
+            >
+              <span>Web Portfolios (24 Live)</span>
+              <ArrowUpRight className="h-4 w-4 text-cyan-300" />
+            </Link>
+
+            <Link
+              href="/case-studies"
+              data-cursor="DETAIL"
+              className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-white/10 bg-transparent px-4 text-xs font-bold uppercase tracking-[0.15em] text-slate-300 transition-all duration-300 hover:text-cyan-300 sm:h-12 sm:px-5 sm:text-sm"
+            >
+              <span>Case Studies</span>
+            </Link>
+          </div>
+
+          {/* Trust Checkmarks */}
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-semibold uppercase tracking-wider text-slate-300 sm:text-sm">
+            <span className="inline-flex items-center gap-2">
+              <Check className="h-4 w-4 text-emerald-400" />
+              {t("hero.ownership")}
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <Check className="h-4 w-4 text-emerald-400" />
+              {t("hero.scale")}
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <Check className="h-4 w-4 text-emerald-400" />
+              {t("hero.partner")}
+            </span>
+          </div>
+        </div>
+
+        {/* 3 Interactive Hero Highlight Cards Below */}
+        <div className="mt-14 grid gap-5 md:grid-cols-3">
+          {heroHighlights.map((item, index) => {
+            const Icon = highlightIcons[index] || Globe2;
+            const translatedItem = translatedHighlights?.[index] ?? item;
+
+            return (
+              <TiltCard
+                key={item.title}
+                cursorLabel="EXPLORE"
+                className="rounded-3xl"
+              >
+                <article className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-b from-white/[0.07] to-white/[0.02] p-6 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50">
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/25 bg-cyan-400/10 text-cyan-300">
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      <span className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-slate-500 group-hover:text-cyan-300">
+                        0{index + 1} // PILLAR
+                      </span>
+                    </div>
+                    <h2 className="mt-5 font-display text-lg font-bold text-white sm:text-xl">
+                      {translatedItem.title}
+                    </h2>
+                    <p className="mt-2 text-xs leading-6 text-slate-300 sm:text-sm">
+                      {translatedItem.description}
+                    </p>
+                  </div>
+                </article>
+              </TiltCard>
+            );
+          })}
         </div>
       </div>
 
-      <div className="mt-8 w-full overflow-hidden border-y border-slate-200/70 bg-white/60 py-4 sm:mt-8">
-        <InfiniteMarquee direction="left" speed="28s">
-          {capabilities.map((capability, index) => (
-            <span
-              key={capability}
-              className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-            >
-              <span className="h-1.5 w-1.5 animate-live-pulse rounded-full bg-brand-cyan motion-reduce:animate-none" />
-              {translatedCapabilities?.[index] ?? capability}
-            </span>
-          ))}
-        </InfiniteMarquee>
+      {/* DevCrafter Signature 3D Tilted Perspective Marquee */}
+      <div className="relative mt-16 overflow-hidden py-6">
+        <div
+          className="relative -mx-8 flex border-y border-white/10 bg-[#070d1c] py-6 shadow-[0_30px_70px_rgba(0,0,0,0.8)]"
+          style={{
+            transform: "perspective(1000px) rotateX(10deg) rotateZ(-1.4deg) scale(1.04)",
+          }}
+        >
+          <div className="capability-marquee-track flex w-max items-center whitespace-nowrap">
+            {marqueeItems.map((cap, idx) => (
+              <span
+                key={`${cap}-${idx}`}
+                className="mx-8 inline-flex items-center gap-8 font-display text-2xl font-black uppercase tracking-[0.22em] text-white/60 transition-colors duration-300 hover:text-cyan-300 sm:text-4xl"
+              >
+                <span>{translatedCapabilities?.[idx % capabilities.length] ?? cap}</span>
+                <span className="h-3.5 w-3.5 rotate-45 rounded-sm bg-cyan-400/70 shadow-[0_0_15px_rgba(56,198,255,0.7)]" />
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
