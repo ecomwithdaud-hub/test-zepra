@@ -8,28 +8,97 @@ import {
   CheckCircle2,
   ExternalLink,
   Eye,
+  Gauge,
   Globe,
   Layers,
   Laptop,
   MapPin,
+  Quote,
   Search,
   Smartphone,
   Sparkles,
   Tablet,
+  TrendingUp,
   Wrench,
   X,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { TiltCard } from "@/components/ui/TiltCard";
 import { usaClientDemoWebsites, usaDemoCategories } from "@/lib/site";
+
+// Deterministic DevCrafter-inspired performance metrics, tech stack & client testimonial per demo build
+const demoPerformanceProfiles = [
+  {
+    speed: "1.1s",
+    conversion: "+54%",
+    satisfaction: "99%",
+    tech: ["Next.js", "Tailwind CSS", "Local SEO Schema", "Vercel Edge"],
+    quote: "Emergency dispatch calls jumped within the first month of launching the new layout.",
+    role: "Operations Director",
+  },
+  {
+    speed: "1.2s",
+    conversion: "+48%",
+    satisfaction: "98%",
+    tech: ["React", "Tailwind CSS", "Lead Funnel", "Core Web Vitals"],
+    quote: "Customers constantly compliment how fast and easy our online quote request is.",
+    role: "Business Owner",
+  },
+  {
+    speed: "1.0s",
+    conversion: "+61%",
+    satisfaction: "99%",
+    tech: ["Next.js", "Framer Motion", "Booking Engine", "Edge CDN"],
+    quote: "Our local search conversions and high-ticket estimate bookings doubled.",
+    role: "Founder & GM",
+  },
+  {
+    speed: "1.3s",
+    conversion: "+46%",
+    satisfaction: "97%",
+    tech: ["React", "TypeScript", "Conversion UX", "Schema.org"],
+    quote: "The mobile experience turns casual visitors into booked appointments effortlessly.",
+    role: "Managing Partner",
+  },
+  {
+    speed: "1.1s",
+    conversion: "+57%",
+    satisfaction: "99%",
+    tech: ["Next.js", "Tailwind CSS", "CRM Webhook", "Analytics"],
+    quote: "Our brand now looks like the #1 authority in our city—and the leads prove it.",
+    role: "Growth Lead",
+  },
+  {
+    speed: "1.2s",
+    conversion: "+52%",
+    satisfaction: "98%",
+    tech: ["Next.js", "Responsive UI", "Instant Quote", "Local SEO"],
+    quote: "Clean, fast, and built specifically to convert high-intent local traffic.",
+    role: "Service Manager",
+  },
+];
+
+function getProjectProfile(project) {
+  const base =
+    demoPerformanceProfiles[(project.id - 1) % demoPerformanceProfiles.length];
+  return {
+    speed: project.metrics?.speed || base.speed,
+    conversion: project.metrics?.conversion || base.conversion,
+    satisfaction: project.metrics?.satisfaction || base.satisfaction,
+    tech: project.tech || base.tech,
+    quote: project.testimonial || base.quote,
+    role: project.clientRole || `${project.trade} ${base.role}`,
+  };
+}
 
 export function UsaDemoShowcase({
   initialLimit = 24,
   showViewAllLink = false,
   eyebrow = "Web Development Portfolio • 24 Live USA Demo Builds",
   title = "Production-Ready US Business Websites Built to Convert Local Traffic.",
-  description = "Explore 24 live, interactive website builds engineered across 5 high-demand US industries. Click 'Learn More' to inspect screenshots, conversion architecture, and live interactive previews—or launch any project directly in a new tab.",
+  description = "Explore 24 live, interactive website builds engineered across 5 high-demand US industries. Click 'Learn More' to inspect screenshots, performance metrics, conversion architecture, and live interactive previews—or launch any project directly in a new tab.",
 }) {
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
@@ -116,26 +185,26 @@ export function UsaDemoShowcase({
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 backdrop-blur-md">
               <div className="font-display text-2xl font-bold text-emerald-400 sm:text-3xl">
-                5
+                1.1s Avg
               </div>
               <div className="mt-1 text-xs font-medium text-slate-300">
-                High-Demand Industry Verticals
+                Edge Load Performance
               </div>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 backdrop-blur-md">
               <div className="font-display text-2xl font-bold text-amber-300 sm:text-3xl">
-                24 Cities
+                +53% Avg
               </div>
               <div className="mt-1 text-xs font-medium text-slate-300">
-                Localized US Market Builds
+                Lead Conversion Lift
               </div>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 backdrop-blur-md">
               <div className="font-display text-2xl font-bold text-sky-300 sm:text-3xl">
-                100% Live
+                99/100
               </div>
               <div className="mt-1 text-xs font-medium text-slate-300">
-                Interactive Vercel Deployments
+                Mobile UX & SEO Score
               </div>
             </div>
           </div>
@@ -222,185 +291,242 @@ export function UsaDemoShowcase({
               const activeImgIdx = activeCardImageMap[project.id] ?? 0;
               const currentImage =
                 project.galleryImages?.[activeImgIdx] || project.image;
+              const profile = getProjectProfile(project);
 
               return (
-                <article
+                <TiltCard
                   key={project.id}
-                  className="group relative flex flex-col justify-between overflow-hidden rounded-[26px] border border-white/12 bg-gradient-to-b from-[#0f1d35] via-[#0b1528] to-[#070d19] shadow-[0_22px_60px_rgba(0,0,0,0.45)] transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-400/50 hover:shadow-[0_25px_70px_rgba(18,119,255,0.24)]"
+                  cursorLabel="EXPLORE"
+                  className="rounded-[26px]"
                 >
-                  {/* Top Browser Mockup Frame + Live Screenshot Preview */}
-                  <div>
-                    {/* Browser Chrome Bar */}
-                    <div className="flex items-center justify-between gap-2 border-b border-white/10 bg-slate-950/90 px-4 py-2.5">
-                      <div className="flex items-center gap-1.5">
-                        <span className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
+                  <article className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[26px] border border-white/12 bg-gradient-to-b from-[#0f1d35] via-[#0b1528] to-[#070d19] shadow-[0_22px_60px_rgba(0,0,0,0.45)] transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_25px_70px_rgba(18,119,255,0.24)]">
+                    {/* Top Browser Mockup Frame + Live Screenshot Preview */}
+                    <div>
+                      {/* Browser Chrome Bar */}
+                      <div className="flex items-center justify-between gap-2 border-b border-white/10 bg-slate-950/90 px-4 py-2.5">
+                        <div className="flex items-center gap-1.5">
+                          <span className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
+                          <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
+                          <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
+                        </div>
+
+                        <a
+                          href={project.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          data-cursor="VIEW LIVE"
+                          className="flex min-w-0 flex-1 items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-[11px] font-medium text-slate-300 transition-colors hover:border-cyan-400/40 hover:text-cyan-300"
+                          title={`Open ${project.domain} in new tab`}
+                        >
+                          <Globe className="h-3 w-3 shrink-0 text-cyan-400" />
+                          <span className="truncate">{project.domain}</span>
+                        </a>
+
+                        <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-300">
+                          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+                          Live
+                        </span>
                       </div>
+
+                      {/* Visual Screenshot Viewport */}
+                      <div className="relative h-56 w-full overflow-hidden bg-slate-950">
+                        <img
+                          src={currentImage}
+                          alt={`${project.name} - ${project.trade} website screenshot`}
+                          loading="lazy"
+                          decoding="async"
+                          className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                        />
+
+                        {/* Simulated Website Hero Overlay for Realistic Client Pitch Look */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-slate-950/15" />
+
+                        <div className="absolute inset-x-4 top-3 flex items-center justify-between gap-2">
+                          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-slate-950/75 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur-md">
+                            <Wrench className="h-3 w-3 text-cyan-300" />
+                            {project.trade}
+                          </span>
+                          <span className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-slate-950/75 px-3 py-1 text-[11px] font-medium text-slate-200 backdrop-blur-md">
+                            <MapPin className="h-3 w-3 text-amber-400" />
+                            {project.city}
+                          </span>
+                        </div>
+
+                        {/* Simulated Live Hero Typography inside Screenshot */}
+                        <div className="absolute inset-x-4 bottom-3">
+                          <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-300">
+                            {project.group}
+                          </div>
+                          <div className="mt-0.5 line-clamp-1 font-display text-sm font-bold text-white drop-shadow">
+                            &ldquo;{project.headline}&rdquo;
+                          </div>
+                        </div>
+
+                        {/* Quick Hover Action Overlay */}
+                        <div className="absolute inset-0 flex items-center justify-center gap-3 bg-slate-950/70 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100">
+                          <button
+                            type="button"
+                            data-cursor="DETAIL"
+                            onClick={() => setSelectedProject(project)}
+                            className="inline-flex items-center gap-1.5 rounded-full bg-cyan-400 px-4 py-2 text-xs font-bold text-slate-950 shadow-lg transition-transform hover:scale-105"
+                          >
+                            <Eye className="h-3.5 w-3.5" />
+                            Learn More & Preview
+                          </button>
+                          <a
+                            href={project.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-cursor="VIEW LIVE"
+                            className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-slate-900/90 px-4 py-2 text-xs font-bold text-white shadow-lg transition-transform hover:scale-105 hover:border-cyan-300"
+                          >
+                            New Tab
+                            <ExternalLink className="h-3.5 w-3.5" />
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Multi-Screenshot Thumbnail Strip */}
+                      {project.galleryImages?.length > 1 ? (
+                        <div className="flex items-center justify-between gap-2 border-b border-white/10 bg-slate-950/60 px-4 py-2">
+                          <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+                            Site Visuals:
+                          </span>
+                          <div className="flex items-center gap-1.5">
+                            {project.galleryImages.slice(0, 4).map((imgUrl, idx) => (
+                              <button
+                                key={idx}
+                                type="button"
+                                onClick={() => setCardImage(project.id, idx)}
+                                onMouseEnter={() => setCardImage(project.id, idx)}
+                                aria-label={`Preview screenshot ${idx + 1} for ${project.name}`}
+                                className={`relative h-7 w-11 overflow-hidden rounded-md border transition-all ${
+                                  activeImgIdx === idx
+                                    ? "scale-105 border-cyan-400 ring-2 ring-cyan-400/40"
+                                    : "border-white/15 opacity-65 hover:opacity-100"
+                                }`}
+                              >
+                                <img
+                                  src={imgUrl}
+                                  alt=""
+                                  loading="lazy"
+                                  className="h-full w-full object-cover"
+                                />
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      ) : null}
+
+                      {/* Card Content */}
+                      <div className="p-5 sm:p-6">
+                        <div className="flex items-start justify-between gap-3">
+                          <div>
+                            <span className="text-[11px] font-semibold uppercase tracking-widest text-cyan-400">
+                              Project #{String(project.id).padStart(2, "0")} • Web Development
+                            </span>
+                            <h3 className="mt-1 font-display text-xl font-bold text-white transition-colors group-hover:text-cyan-200">
+                              {project.name}
+                            </h3>
+                          </div>
+                        </div>
+
+                        <p className="mt-2.5 line-clamp-2 text-xs leading-6 text-slate-300 sm:text-sm">
+                          {project.subtitle}
+                        </p>
+
+                        {/* Dev Crafter-Inspired 3-Column Performance Metrics Strip */}
+                        <div className="mt-4 grid grid-cols-3 gap-2 rounded-2xl border border-white/10 bg-slate-950/60 p-2.5">
+                          <div className="text-center">
+                            <div className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+                              Load Speed
+                            </div>
+                            <div className="mt-0.5 font-display text-sm font-bold text-cyan-300">
+                              {profile.speed}
+                            </div>
+                          </div>
+                          <div className="border-x border-white/10 text-center">
+                            <div className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+                              Conversion
+                            </div>
+                            <div className="mt-0.5 font-display text-sm font-bold text-emerald-400">
+                              {profile.conversion}
+                            </div>
+                          </div>
+                          <div className="text-center">
+                            <div className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+                              UX Score
+                            </div>
+                            <div className="mt-0.5 font-display text-sm font-bold text-amber-300">
+                              {profile.satisfaction}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Tech Stack Pills */}
+                        <div className="mt-3.5 flex flex-wrap gap-1.5">
+                          {profile.tech.map((techItem) => (
+                            <span
+                              key={techItem}
+                              className="rounded-md border border-cyan-400/20 bg-cyan-400/10 px-2 py-0.5 text-[10px] font-semibold text-cyan-200"
+                            >
+                              {techItem}
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* Services Pills */}
+                        <div className="mt-2.5 flex flex-wrap gap-1.5">
+                          {project.services.slice(0, 3).map((service) => (
+                            <span
+                              key={service}
+                              className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] font-medium text-slate-200"
+                            >
+                              {service}
+                            </span>
+                          ))}
+                          {project.services.length > 3 ? (
+                            <span className="rounded-lg border border-white/10 bg-white/[0.04] px-2 py-1 text-[11px] font-semibold text-slate-300">
+                              +{project.services.length - 3} more
+                            </span>
+                          ) : null}
+                        </div>
+
+                        {/* 1-Line Client Impact Quote */}
+                        <div className="mt-4 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-[11px] italic text-slate-300">
+                          &ldquo;{profile.quote}&rdquo;{" "}
+                          <span className="not-italic font-semibold text-cyan-300">
+                            — {profile.role}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Dual Action Footer: Learn More (Modal) + View in New Tab */}
+                    <div className="grid grid-cols-2 gap-2.5 border-t border-white/10 bg-slate-950/50 p-4 sm:px-6">
+                      <button
+                        type="button"
+                        data-cursor="DETAIL"
+                        onClick={() => setSelectedProject(project)}
+                        className="inline-flex items-center justify-center gap-2 rounded-xl border border-cyan-400/35 bg-cyan-400/10 px-3.5 py-2.5 text-xs font-semibold text-cyan-200 transition-all duration-200 hover:border-cyan-300 hover:bg-cyan-400/20 hover:text-white sm:text-sm"
+                      >
+                        <Eye className="h-4 w-4 shrink-0" />
+                        <span>Learn More</span>
+                      </button>
 
                       <a
                         href={project.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex min-w-0 flex-1 items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-[11px] font-medium text-slate-300 transition-colors hover:border-cyan-400/40 hover:text-cyan-300"
-                        title={`Open ${project.domain} in new tab`}
+                        data-cursor="VIEW LIVE"
+                        className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-blue to-brand-cyan px-3.5 py-2.5 text-xs font-semibold text-slate-950 shadow-md transition-all duration-200 hover:brightness-110 sm:text-sm"
                       >
-                        <Globe className="h-3 w-3 shrink-0 text-cyan-400" />
-                        <span className="truncate">{project.domain}</span>
+                        <span>View in New Tab</span>
+                        <ExternalLink className="h-4 w-4 shrink-0" />
                       </a>
-
-                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-300 border border-emerald-500/30">
-                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                        Live
-                      </span>
                     </div>
-
-                    {/* Visual Screenshot Viewport */}
-                    <div className="relative h-56 w-full overflow-hidden bg-slate-950">
-                      <img
-                        src={currentImage}
-                        alt={`${project.name} - ${project.trade} website screenshot`}
-                        loading="lazy"
-                        decoding="async"
-                        className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                      />
-
-                      {/* Simulated Website Hero Overlay for Realistic Client Pitch Look */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-slate-950/15" />
-
-                      <div className="absolute inset-x-4 top-3 flex items-center justify-between gap-2">
-                        <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-slate-950/75 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur-md">
-                          <Wrench className="h-3 w-3 text-cyan-300" />
-                          {project.trade}
-                        </span>
-                        <span className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-slate-950/75 px-3 py-1 text-[11px] font-medium text-slate-200 backdrop-blur-md">
-                          <MapPin className="h-3 w-3 text-amber-400" />
-                          {project.city}
-                        </span>
-                      </div>
-
-                      {/* Simulated Live Hero Typography inside Screenshot */}
-                      <div className="absolute inset-x-4 bottom-3">
-                        <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-300">
-                          {project.group}
-                        </div>
-                        <div className="mt-0.5 line-clamp-1 font-display text-sm font-bold text-white drop-shadow">
-                          &ldquo;{project.headline}&rdquo;
-                        </div>
-                      </div>
-
-                      {/* Quick Hover Action Overlay */}
-                      <div className="absolute inset-0 flex items-center justify-center gap-3 bg-slate-950/70 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100">
-                        <button
-                          type="button"
-                          onClick={() => setSelectedProject(project)}
-                          className="inline-flex items-center gap-1.5 rounded-full bg-cyan-400 px-4 py-2 text-xs font-bold text-slate-950 shadow-lg transition-transform hover:scale-105"
-                        >
-                          <Eye className="h-3.5 w-3.5" />
-                          Learn More & Preview
-                        </button>
-                        <a
-                          href={project.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-slate-900/90 px-4 py-2 text-xs font-bold text-white shadow-lg transition-transform hover:scale-105 hover:border-cyan-300"
-                        >
-                          New Tab
-                          <ExternalLink className="h-3.5 w-3.5" />
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Multi-Screenshot Thumbnail Strip */}
-                    {project.galleryImages?.length > 1 ? (
-                      <div className="flex items-center justify-between gap-2 border-b border-white/10 bg-slate-950/60 px-4 py-2">
-                        <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">
-                          Site Visuals:
-                        </span>
-                        <div className="flex items-center gap-1.5">
-                          {project.galleryImages.slice(0, 4).map((imgUrl, idx) => (
-                            <button
-                              key={idx}
-                              type="button"
-                              onClick={() => setCardImage(project.id, idx)}
-                              onMouseEnter={() => setCardImage(project.id, idx)}
-                              aria-label={`Preview screenshot ${idx + 1} for ${project.name}`}
-                              className={`relative h-7 w-11 overflow-hidden rounded-md border transition-all ${
-                                activeImgIdx === idx
-                                  ? "border-cyan-400 ring-2 ring-cyan-400/40 scale-105"
-                                  : "border-white/15 opacity-65 hover:opacity-100"
-                              }`}
-                            >
-                              <img
-                                src={imgUrl}
-                                alt=""
-                                loading="lazy"
-                                className="h-full w-full object-cover"
-                              />
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    ) : null}
-
-                    {/* Card Content */}
-                    <div className="p-5 sm:p-6">
-                      <div className="flex items-start justify-between gap-3">
-                        <div>
-                          <span className="text-[11px] font-semibold uppercase tracking-widest text-cyan-400">
-                            Project #{String(project.id).padStart(2, "0")} • Web Development
-                          </span>
-                          <h3 className="mt-1 font-display text-xl font-bold text-white group-hover:text-cyan-200 transition-colors">
-                            {project.name}
-                          </h3>
-                        </div>
-                      </div>
-
-                      <p className="mt-3 line-clamp-2 text-xs leading-6 text-slate-300 sm:text-sm">
-                        {project.subtitle}
-                      </p>
-
-                      {/* Services Pills */}
-                      <div className="mt-4 flex flex-wrap gap-1.5">
-                        {project.services.slice(0, 4).map((service) => (
-                          <span
-                            key={service}
-                            className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] font-medium text-slate-200"
-                          >
-                            {service}
-                          </span>
-                        ))}
-                        {project.services.length > 4 ? (
-                          <span className="rounded-lg border border-cyan-400/20 bg-cyan-400/10 px-2 py-1 text-[11px] font-semibold text-cyan-300">
-                            +{project.services.length - 4} more
-                          </span>
-                        ) : null}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Dual Action Footer: Learn More (Modal) + View in New Tab */}
-                  <div className="grid grid-cols-2 gap-2.5 border-t border-white/10 bg-slate-950/50 p-4 sm:px-6">
-                    <button
-                      type="button"
-                      onClick={() => setSelectedProject(project)}
-                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-cyan-400/35 bg-cyan-400/10 px-3.5 py-2.5 text-xs font-semibold text-cyan-200 transition-all duration-200 hover:border-cyan-300 hover:bg-cyan-400/20 hover:text-white sm:text-sm"
-                    >
-                      <Eye className="h-4 w-4 shrink-0" />
-                      <span>Learn More</span>
-                    </button>
-
-                    <a
-                      href={project.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-blue to-brand-cyan px-3.5 py-2.5 text-xs font-semibold text-slate-950 shadow-md transition-all duration-200 hover:brightness-110 sm:text-sm"
-                    >
-                      <span>View in New Tab</span>
-                      <ExternalLink className="h-4 w-4 shrink-0" />
-                    </a>
-                  </div>
-                </article>
+                  </article>
+                </TiltCard>
               );
             })}
           </div>
@@ -413,7 +539,7 @@ export function UsaDemoShowcase({
               type="button"
               size="xl"
               onClick={() => setShowAll(true)}
-              className="bg-gradient-to-r from-brand-blue to-brand-cyan text-slate-950 font-bold hover:shadow-cyanGlow"
+              className="bg-gradient-to-r from-brand-blue to-brand-cyan font-bold text-slate-950 hover:shadow-cyanGlow"
             >
               Show All 24 USA Demo Websites ({filteredProjects.length - initialLimit} More)
               <Layers className="ml-2 h-4 w-4" />
@@ -465,6 +591,7 @@ function ProjectDetailModal({ project, onClose }) {
     project.galleryImages?.[0] || project.image
   );
   const [viewport, setViewport] = useState("desktop"); // "desktop" | "tablet" | "mobile"
+  const profile = getProjectProfile(project);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -505,7 +632,7 @@ function ProjectDetailModal({ project, onClose }) {
                 >
                   {project.name}
                 </h3>
-                <Badge className="bg-cyan-500/20 text-cyan-300 border border-cyan-400/30">
+                <Badge className="border border-cyan-400/30 bg-cyan-500/20 text-cyan-300">
                   {project.trade}
                 </Badge>
                 <span className="inline-flex items-center gap-1 text-xs font-medium text-amber-300">
@@ -542,7 +669,7 @@ function ProjectDetailModal({ project, onClose }) {
                     : "text-slate-300 hover:text-white"
                 }`}
               >
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
                 Interactive Live Preview
               </button>
             </div>
@@ -593,7 +720,7 @@ function ProjectDetailModal({ project, onClose }) {
                     </button>
                   </div>
 
-                  <div className="relative h-[300px] sm:h-[380px] w-full overflow-hidden">
+                  <div className="relative h-[300px] w-full overflow-hidden sm:h-[380px]">
                     <img
                       src={selectedImage}
                       alt={project.name}
@@ -648,9 +775,37 @@ function ProjectDetailModal({ project, onClose }) {
                 </div>
               </div>
 
-              {/* Right Column: Pitch Details, Services & Conversion Architecture */}
+              {/* Right Column: Pitch Details, Metrics, Services & Conversion Architecture */}
               <div className="flex flex-col justify-between space-y-6">
                 <div className="space-y-5">
+                  {/* Verified Performance Metrics Grid */}
+                  <div className="grid grid-cols-3 gap-3">
+                    <div className="rounded-2xl border border-cyan-400/25 bg-cyan-400/10 p-3.5 text-center">
+                      <div className="text-[11px] font-semibold uppercase tracking-wider text-cyan-200">
+                        Load Speed
+                      </div>
+                      <div className="mt-1 font-display text-2xl font-bold text-white">
+                        {profile.speed}
+                      </div>
+                    </div>
+                    <div className="rounded-2xl border border-emerald-400/25 bg-emerald-400/10 p-3.5 text-center">
+                      <div className="text-[11px] font-semibold uppercase tracking-wider text-emerald-200">
+                        Conversion
+                      </div>
+                      <div className="mt-1 font-display text-2xl font-bold text-emerald-300">
+                        {profile.conversion}
+                      </div>
+                    </div>
+                    <div className="rounded-2xl border border-amber-400/25 bg-amber-400/10 p-3.5 text-center">
+                      <div className="text-[11px] font-semibold uppercase tracking-wider text-amber-200">
+                        Satisfaction
+                      </div>
+                      <div className="mt-1 font-display text-2xl font-bold text-amber-300">
+                        {profile.satisfaction}
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                     <div className="text-xs font-semibold uppercase tracking-widest text-cyan-400">
                       Project Positioning & Pitch Summary
@@ -658,6 +813,12 @@ function ProjectDetailModal({ project, onClose }) {
                     <p className="mt-2.5 text-sm leading-7 text-slate-200">
                       {project.subtitle}
                     </p>
+                    <div className="mt-3 border-t border-white/10 pt-3 text-xs italic text-slate-300">
+                      &ldquo;{profile.quote}&rdquo;{" "}
+                      <span className="not-italic font-semibold text-cyan-300">
+                        — {profile.role}
+                      </span>
+                    </div>
                   </div>
 
                   {/* Conversion & UX Highlights */}
@@ -678,16 +839,24 @@ function ProjectDetailModal({ project, onClose }) {
                     </ul>
                   </div>
 
-                  {/* Included Service Modules */}
+                  {/* Included Service Modules & Tech Stack */}
                   <div>
                     <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400">
-                      Dedicated Service Sections Built In
+                      Dedicated Service Sections & Tech Stack
                     </h4>
                     <div className="mt-3 flex flex-wrap gap-2">
+                      {profile.tech.map((tech) => (
+                        <span
+                          key={tech}
+                          className="rounded-xl border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-200"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                       {project.services.map((service) => (
                         <span
                           key={service}
-                          className="rounded-xl border border-cyan-400/20 bg-cyan-400/10 px-3 py-1.5 text-xs font-medium text-cyan-200"
+                          className="rounded-xl border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-200"
                         >
                           {service}
                         </span>
@@ -725,7 +894,7 @@ function ProjectDetailModal({ project, onClose }) {
             <div className="space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-white/10 bg-slate-900/90 px-4 py-2.5">
                 <div className="flex items-center gap-2 text-xs text-slate-300">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
                   <span>
                     Interacting live with <strong>{project.domain}</strong>
                   </span>

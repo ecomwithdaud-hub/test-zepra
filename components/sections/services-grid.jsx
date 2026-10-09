@@ -46,6 +46,7 @@ export function ServicesGrid({
           {services.map((service, index) => (
             <div key={service.title} id={slugify(service.title)}>
               <ServiceCard
+                index={index}
                 service={{ ...service, ...translatedServices?.[index] }}
                 agencyLabel={t("services.agencyService")}
               />
