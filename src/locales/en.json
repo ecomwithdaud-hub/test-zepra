@@ -1,0 +1,388 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact",
+    "viewServices": "View Services",
+    "bookConsultation": "Book a Consultation",
+    "websiteDevelopment": "Website Development",
+    "socialMediaMarketing": "Social Media Marketing",
+    "thumbnailDesigning": "Thumbnail Designing",
+    "websiteDevelopmentDescription": "Live website deployments, frontend builds, and client-ready web delivery.",
+    "socialMediaMarketingDescription": "Campaign examples, reporting snapshots, and growth marketing work.",
+    "thumbnailDesigningDescription": "YouTube thumbnail concepts, bold covers, and visual storytelling layouts."
+  },
+  "hero": {
+    "eyebrow": "Digital delivery, built around outcomes",
+    "titleLead": "Build digital systems that move your business",
+    "titleAccent": "forward.",
+    "description": "Strategy, engineering, AI, and growth expertise in one accountable team, helping ambitious businesses turn digital complexity into measurable progress.",
+    "projectCta": "Talk through your project",
+    "capabilitiesCta": "Explore capabilities",
+    "ownership": "Clear ownership",
+    "scale": "Built to scale",
+    "partner": "One delivery partner",
+    "systemLabel": "Zepra delivery system",
+    "systemTitle": "From first brief to lasting growth",
+    "plan": "Plan",
+    "build": "Build",
+    "improve": "Improve",
+    "connectedTeam": "A connected team, accountable delivery",
+    "capabilities": ["Web platforms", "AI automation", "Ecommerce", "Search growth", "Paid media", "Product design"],
+    "highlights": [
+      { "title": "Web platforms that convert", "description": "Premium websites, ecommerce stores, and business systems designed to look credible and perform under real client pressure." },
+      { "title": "AI workflows with business value", "description": "From bots to process automation, we build practical AI systems that improve response time, operations, and lead handling." },
+      { "title": "Growth support beyond launch", "description": "Marketing, SEO, content, support, and optimization keep your digital presence working after the build phase ends." }
+    ]
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "A complete digital services stack under one trusted brand.",
+    "cta": "Start a project discussion",
+    "agencyService": "Agency service",
+    "items": [
+      { "title": "Web Development", "summary": "Full-stack websites, WordPress builds, Wix experiences, and custom business platforms designed for speed, trust, and conversion." },
+      { "title": "AI Agents / Bots", "summary": "Strategy, creation, and end-to-end deployment of AI assistants, business bots, and automation flows tailored to real operations." },
+      { "title": "Digital Marketing", "summary": "Meta Ads, Google Ads, and TikTok Ads campaigns focused on lead quality, sustainable acquisition, and stronger campaign performance." },
+      { "title": "Google My Business", "summary": "Profile setup, optimization, and ongoing management to help local businesses improve visibility, credibility, and customer discovery." },
+      { "title": "Google AdSense", "summary": "AdSense account setup and management with clean implementation, compliance awareness, and revenue-focused placement planning." },
+      { "title": "SEO / GEO / AEO", "summary": "Search, generative engine, and answer engine optimization designed to strengthen discoverability across modern digital surfaces." },
+      { "title": "Content Writing & Blogging", "summary": "High-quality website copy, landing pages, articles, and blog content crafted to support authority, ranking, and conversion." },
+      { "title": "Ecommerce Solutions", "summary": "Shopify, Amazon, eBay, Etsy, and WooCommerce solutions built for clean merchandising, smoother sales, and operational clarity." },
+      { "title": "Graphic Design", "summary": "Branding systems, logo design, and polished visual assets that make businesses look more established and market-ready." },
+      { "title": "Video Editing", "summary": "Professional video editing for marketing, social media, creators, and business communication." },
+      { "title": "Customer Support / Service", "summary": "Responsive customer support systems that help businesses deliver reliable service and stronger client experiences." }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Start a business conversation with Zepra Tech.",
+    "description": "Use the inquiry form for web development, AI automation, digital marketing, ecommerce, design, SEO, or technical support needs.",
+    "businessInquiry": "Business inquiry",
+    "optionsTitle": "Clear contact options for local and international clients.",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "chatWhatsapp": "Chat on WhatsApp",
+    "sendEmail": "Send an Email",
+    "socialPresence": "Social presence",
+    "scheduleCall": "Schedule a direct call",
+    "bookCall": "Book a 15-min Discovery Call",
+    "bookCallDescription": "Pick a convenient time with our team",
+    "scheduleNow": "Schedule Now",
+    "bookingMessage": "Hi, I would like to book a 15-minute discovery call.",
+    "strictNda": "Strict NDA",
+    "dataPrivacy": "100% Data Privacy",
+    "responseGuarantee": "24h Response",
+    "globalSupport": "Global Support",
+    "supportHours": "US & PK Timings",
+    "requestConsultation": "Request a consultation",
+    "formIntro": "Share your business goals, timeline, and service needs. The form now works as a frontend-only inquiry draft that opens your email app with the details filled in.",
+    "fullName": "Full Name",
+    "companyName": "Company Name",
+    "workEmail": "Work Email",
+    "phoneWhatsapp": "Phone / WhatsApp",
+    "serviceNeeded": "Service Needed",
+    "estimatedBudget": "Estimated Budget",
+    "preferredTimeline": "Preferred Timeline",
+    "projectGoals": "Project Goals",
+    "namePlaceholder": "Your full name",
+    "companyPlaceholder": "Company or brand",
+    "emailPlaceholder": "name@company.com",
+    "phonePlaceholder": "+92...",
+    "selectService": "Select a service",
+    "selectBudget": "Select a range",
+    "selectTimeline": "Choose a timeline",
+    "messagePlaceholder": "Tell us what you want to build, improve, or automate.",
+    "submit": "Open email draft",
+    "validationSummary": "Please review the highlighted fields and try again.",
+    "validation": {
+      "name": "Please enter your full name.",
+      "company": "Please enter your company name.",
+      "email": "Please enter a valid work email.",
+      "phone": "Please enter your phone or WhatsApp number.",
+      "service": "Please choose a service.",
+      "budget": "Please select an estimated budget.",
+      "timeline": "Please choose a preferred timeline.",
+      "messageMin": "Please share a little more about your project.",
+      "messageMax": "Please keep the message under 2000 characters."
+    },
+    "emailOpening": "Your email app is opening with the inquiry details. You can also use the WhatsApp button if you prefer a faster response.",
+    "budgetOptions": ["Under $1,000", "$1,000 - $3,000", "$3,000 - $8,000", "$8,000 - $20,000", "$20,000+"],
+    "timelineOptions": ["As soon as possible", "Within 2 weeks", "Within 1 month", "Within 2-3 months", "Flexible / exploring"]
+  },
+  "pages": {
+    "contactHero": {
+      "eyebrow": "Contact Zepra Tech",
+      "title": "Let’s talk about the website, AI system, or growth solution your business needs next.",
+      "description": "This page is designed to support business inquiries cleanly, whether you are reaching out from Pakistan or an international market. Use the form to start a serious project discussion.",
+      "primaryAction": "Send an Inquiry",
+      "secondaryAction": "Review Services"
+    }
+  },
+  "about": {
+    "eyebrow": "About Zepra Tech",
+    "title": "A forward-thinking digital agency built around business results.",
+    "description": "Zepra Tech helps businesses grow through technology, automation, online presence, and creative digital execution. Our goal is simple: make brands look more credible, move faster, and perform better in the digital space.",
+    "brandStory": "Brand story",
+    "brandStoryText": "We are building Zepra Tech as a dependable growth partner for companies that need stronger digital systems, better market positioning, and execution they can trust.",
+    "missionDriven": "Mission-driven",
+    "missionText": "Every project is shaped to balance professionalism, innovation, reliability, and client-focused execution from planning to post-launch support.",
+    "learnMore": "Learn more about Zepra Tech",
+    "pillars": [
+      { "title": "Mission-first execution", "description": "We align creative work, technical delivery, and business outcomes so each engagement supports measurable growth." },
+      { "title": "Professional delivery culture", "description": "Clear communication, disciplined workflows, and accountable leadership keep projects moving with confidence." },
+      { "title": "Modern capability stack", "description": "Web development, AI automation, marketing, ecommerce, design, and support work together as one connected system." }
+    ],
+    "principles": {
+      "eyebrow": "Operating Principles",
+      "title": "How Zepra Tech approaches modern agency delivery.",
+      "description": "The business is positioned to help clients move with more confidence by combining strong leadership, polished execution, and long-term thinking.",
+      "items": [
+        { "title": "Professional by design", "description": "Every detail, from messaging to frontend polish, is shaped to help clients present themselves with more authority and trust." },
+        { "title": "Execution with structure", "description": "Projects move through clear stages, giving clients visibility, alignment, and a more dependable decision-making process." },
+        { "title": "Built for ongoing growth", "description": "Zepra Tech supports growth after launch through optimization, campaigns, content, support, and scalable digital systems." }
+      ]
+    }
+  },
+  "servicePage": {
+    "eyebrow": "Service lanes",
+    "title": "Structured around what businesses actually need.",
+    "description": "Our services are intentionally broad, but they are organized around practical business objectives rather than disconnected deliverables.",
+    "lanes": [
+      { "title": "Build", "description": "Web development, ecommerce solutions, graphic design, and video editing that shape a polished digital presence." },
+      { "title": "Automate", "description": "AI agents, bots, and practical systems that help teams reduce manual work and respond faster." },
+      { "title": "Grow", "description": "Marketing, SEO, GEO, AEO, content writing, and Google tools that improve reach and visibility." },
+      { "title": "Support", "description": "Customer support and service structures that help businesses stay responsive after launch." }
+    ]
+  },
+  "contactPage": {
+    "stepsEyebrow": "What happens next",
+    "stepsTitle": "A straightforward lead flow built for professional conversations.",
+    "stepsDescription": "The contact journey is structured to help both sides move quickly from initial interest to a more focused consultation.",
+    "steps": [
+      { "title": "Share your requirements", "description": "Tell us what you need to build, improve, or automate so we can understand the project clearly." },
+      { "title": "Receive a focused response", "description": "We review your inquiry around scope, direction, and fit before proposing the best next step." },
+      { "title": "Move into consultation", "description": "Once aligned, we can discuss delivery approach, timing, and the right solution path for your business." }
+    ]
+  },
+  "footer": {
+    "tagline": "Where ideas turn into impact.",
+    "services": "Services",
+    "solutions": "Solutions",
+    "products": "Products / Tech Stack",
+    "resources": "Resources",
+    "company": "Company",
+    "technology": "Technology ecosystem",
+    "globalPresence": "Global locations & presence",
+    "allRightsReserved": "All Rights Reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "security": "Security",
+    "social": "Social media",
+    "links": {
+      "webDevelopment": "Web Development", "aiAutomation": "AI Automation", "mobileApps": "Mobile Apps", "cloud": "Cloud", "uiux": "UI/UX", "ecommerce": "Ecommerce", "customSoftware": "Custom Software", "workflowAutomation": "Workflow Automation", "aiOps": "AI Ops", "enterpriseSystems": "Enterprise Systems", "webPlatforms": "Web Platforms", "mobilePlatforms": "Mobile Platforms", "apis": "APIs", "cloudInfrastructure": "Cloud Infrastructure", "blogs": "Blogs", "caseStudies": "Case Studies", "portfolio": "Portfolio", "guides": "Guides", "news": "News", "aboutUs": "About Us", "careers": "Careers", "contactUs": "Contact Us", "partnerProgram": "Partner Program"
+    },
+    "locations": [
+      { "name": "USA", "detail": "San Jose, CA / Delaware", "note": "US Recognized Tech Agency" },
+      { "name": "Pakistan (HQ)", "detail": "D Tower, Plot B, 281 Ghazi Rd, Khuda Buksh Colony KB Society, Lahore, Punjab" },
+      { "name": "UAE / Global Services", "detail": "Serving clients worldwide across the US, UK, Middle East, and Asia-Pacific." },
+      { "name": "Global Reach", "detail": "Distributed delivery for clients across multiple time zones." }
+    ]
+  },
+  "legal": {
+    "lastUpdated": "Last updated: [add date]",
+    "pages": {
+      "PrivacyPolicy": {
+        "title": "Privacy Policy",
+        "intro": "[Draft placeholder: replace this page with the approved Zepra Tech privacy policy before publishing.]",
+        "sections": [
+          { "heading": "Information we collect", "body": "[Add what the contact form and site collect.]" },
+          { "heading": "How we use it", "body": "[Add why the information is collected and used.]" },
+          { "heading": "Sharing and storage", "body": "[Add who receives the data and how long it is kept.]" },
+          { "heading": "Your choices", "body": "[Add how people can ask to view or delete their data.]" }
+        ]
+      },
+      "TermsOfUse": {
+        "title": "Terms of Use",
+        "intro": "[Draft placeholder: replace this page with the approved Zepra Tech terms before publishing.]",
+        "sections": [
+          { "heading": "Using this website", "body": "[Add the rules for using the website.]" },
+          { "heading": "Services and payments", "body": "[Add how projects, quotes, and payments work.]" },
+          { "heading": "Intellectual property", "body": "[Add who owns the delivered work and site content.]" },
+          { "heading": "Contact", "body": "[Add who to contact with questions about these terms.]" }
+        ]
+      },
+      "HumanRightsPolicy": {
+        "title": "Human Rights Policy",
+        "intro": "[Draft placeholder: replace this page with the approved Zepra Tech human rights policy before publishing.]",
+        "sections": [
+          { "heading": "Our commitment", "body": "[Add the company's stated commitment.]" },
+          { "heading": "Our team and partners", "body": "[Add how this applies to staff, freelancers, and suppliers.]" },
+          { "heading": "Raising a concern", "body": "[Add how to report a concern.]" }
+        ]
+      },
+      "ModernSlaveryAct": {
+        "title": "Modern Slavery Act",
+        "intro": "[Draft placeholder: replace this page with the approved Zepra Tech modern slavery statement before publishing.]",
+        "sections": [
+          { "heading": "Our statement", "body": "[Add the company's statement.]" },
+          { "heading": "Our supply chain", "body": "[Add how suppliers and partners are checked.]" },
+          { "heading": "Raising a concern", "body": "[Add how to report a concern.]" }
+        ]
+      }
+    }
+  },
+  "cta": {
+    "eyebrow": "Start your next project",
+    "title": "Ready to build a stronger website, smarter AI workflow, or better digital growth engine?",
+    "description": "Talk to Zepra Tech about web development, AI automation, ecommerce, SEO, marketing, design, and long-term support. We structure projects for credibility, performance, and scalable business growth."
+  },
+  "home": {
+    "operations": {
+      "eyebrow": "The AI Revolution In Operations",
+      "title": "Transforming Business Operations with AI + Data Science.",
+      "description": "The shift to AI-native operations means moving away from slow, manual processes. We build custom AI automation, intelligent data pipelines, and bank-grade data security into your business—making it work faster, smarter, and scale effortlessly.",
+      "legacyTag": "Legacy Model",
+      "legacyStatus": "Slow & Expensive",
+      "legacyTitle": "Traditional Manual Business Operations",
+      "legacyDescription": "Standard operational setups relying on traditional human hours and fragmented tools.",
+      "legacyPoints": [
+        { "label": "Manual & Repetitive Tasks", "description": "Hours wasted every day on manual data entry, reporting, and routine tasks." },
+        { "label": "Slow Response Times", "description": "Customer queries and lead follow-ups take hours or days to process." },
+        { "label": "Human Errors & Security Risks", "description": "Scattered client data without automated encryption or strict compliance." },
+        { "label": "High Overhead Costs", "description": "Scaling operations requires constantly hiring more workforce and expanding payroll." }
+      ],
+      "aiTag": "AI-Native Revolution",
+      "aiStatus": "Fast, Scalable & Secure",
+      "aiTitle": "Intelligent AI + Data Science Operations",
+      "aiDescription": "Modern automated architecture designed to handle complex workflows with 24/7 reliability.",
+      "aiPoints": [
+        { "label": "24/7 AI Automation", "description": "Custom AI workflows execute repetitive tasks, document handling, and lead processing instantly." },
+        { "label": "Data Science Intelligence", "description": "Live real-time dashboards analyze trends and provide predictive insights for growth." },
+        { "label": "Enterprise Data Security", "description": "Bank-grade encryption and location-based compliance keeping client data 100% safe." },
+        { "label": "10x Operational Leverage", "description": "Multiply business output and scale revenue without increasing overhead expenses." }
+      ],
+      "pillars": [
+        { "category": "Automation", "title": "AI Workflow Transformation", "description": "We replace time-consuming manual work with smart AI pipelines that work continuously without human intervention or delay." },
+        { "category": "Data Science", "title": "Predictive Growth Insights", "description": "We structure your raw business data into clear, real-time analytics that guide executive decisions and eliminate guesswork." },
+        { "category": "Data Security", "title": "Bank-Grade Compliance", "description": "Your proprietary business data remains completely isolated and protected with encrypted AI pipelines and regulatory standards." }
+      ]
+    },
+    "whyUs": {
+      "eyebrow": "WHY CHOOSE US",
+      "title": "Built for trust, speed, and real business outcomes.",
+      "description": "Proven engineering and digital execution designed to scale your revenue worldwide.",
+      "accreditations": ["ISO Certified (Quality Standards)", "FBR Approved (Pakistan)", "Registered LLC (United States)"],
+      "chat": "Let’s chat",
+      "metrics": ["Projects Delivered", "Websites Launched", "E-Commerce Stores Scaled", "Built for Pakistan & International Clients"],
+      "pillars": [
+        { "title": "Unified Delivery Stack", "description": "Websites, Shopify e-commerce, AI automation, and graphic design under one roof." },
+        { "title": "Secure & Scalable Infrastructure", "description": "ISO-compliant security, robust performance, and zero downtime, built to support your business as it grows." },
+        { "title": "Growth-Focused Execution", "description": "Digital marketing, conversion rate optimization, and revenue-driven performance focused on measurable progress." },
+        { "title": "Dedicated Client Partnership", "description": "Direct developer communication, fast sprint cycles, and 24/7 support keep your team moving with confidence." }
+      ]
+    },
+    "testimonials": {
+      "eyebrow": "Client trust & reviews",
+      "title": "What our global clients say about us.",
+      "description": "Real testimonials from enterprises, startups, and brands across web, AI, e-commerce, and growth marketing.",
+      "items": [
+        { "quote": "Zepra Tech built our platform fast. Profile management and paper sharing now run smoothly with zero lag.", "role": "MERN project testimonial", "service": "MERN Stack" },
+        { "quote": "Our Shopify store scaled seamlessly. Customizations sped up mobile checkout and boosted conversions by 35%.", "role": "E-Commerce project", "service": "Shopify Plus" },
+        { "quote": "A custom AI assistant automated 70% of support queries, saving us hundreds of hours each month.", "role": "Customer operations", "service": "AI Automation" },
+        { "quote": "Our complex dashboard became an intuitive SaaS product, and active-user retention increased instantly.", "role": "SaaS product team", "service": "UI/UX Redesign" },
+        { "quote": "Organic rankings and lead flow rose within 90 days. The team was strategic and transparent throughout.", "role": "Growth marketing client", "service": "SEO & Growth" },
+        { "quote": "Our enterprise web app arrived ahead of schedule, with strong architecture, security, and scalability.", "role": "Enterprise product team", "service": "Custom Web App" },
+        { "quote": "Our cross-platform app feels fast and intuitive, with smooth navigation and clear sprint communication.", "role": "Mobile product team", "service": "Mobile App" },
+        { "quote": "The new cloud and deployment pipeline is faster, with system uptime at 99.9%.", "role": "Cloud platform team", "service": "DevOps & Cloud" },
+        { "quote": "Zepra handled design through platform launch under one roof, with clear ownership throughout.", "role": "Brand and digital team", "service": "Brand Strategy" }
+      ]
+    }
+  },
+  "marketingPage": {
+    "eyebrow": "Social Media Marketing",
+    "title": "Social media marketing proof arranged as a clean professional review gallery.",
+    "description": "These visuals present campaign work, reporting snapshots, and growth evidence in a polished agency-style format.",
+    "highlights": [
+      { "title": "Campaign visibility", "description": "Account screenshots show real campaign monitoring and reporting work." },
+      { "title": "Performance tracking", "description": "The gallery covers spend, clicks, leads, analytics, optimization, and reporting." },
+      { "title": "Growth-focused execution", "description": "A practical view of social marketing, paid campaigns, and growth support." }
+    ],
+    "proofs": [
+      { "title": "Campaign Spend Snapshot", "summary": "Reporting view showing campaign spend, clicks, CTR, and overall ad account performance.", "label": "Meta Ads Reporting" },
+      { "title": "Growth Analytics Dashboard", "summary": "Analytics dashboard highlighting user activity, retention, and growth metrics over time.", "label": "Analytics Growth" },
+      { "title": "Campaign Performance Proof", "summary": "Ad manager snapshot showing campaign results, spend efficiency, and account movement.", "label": "Ad Results" },
+      { "title": "Cost Trend Review", "summary": "Chart showing click volume, cost movement, and average CPC across a reporting period.", "label": "Cost Tracking" },
+      { "title": "Lead Campaign Reporting 01", "summary": "Lead-generation report covering results, reach, impressions, and amount spent.", "label": "Lead Generation" },
+      { "title": "Lead Campaign Reporting 02", "summary": "Follow-up report showing campaign continuity, performance shifts, and monitoring.", "label": "Campaign Continuity" },
+      { "title": "Optimization Recommendation", "summary": "Results view with cost-per-result guidance, recent outcomes, and campaign trends.", "label": "Optimization Review" },
+      { "title": "Recent Results Overview", "summary": "Recent campaign output, spend levels, and visible performance direction.", "label": "Results Overview" }
+    ]
+  },
+  "thumbnailPage": {
+    "eyebrow": "Thumbnail Designing",
+    "title": "A focused showcase for bold, attention-first thumbnail design work.",
+    "description": "Selected thumbnail concepts showcase visual quality, stronger contrast, and focused YouTube design execution.",
+    "highlights": [
+      { "title": "CTR-focused hierarchy", "description": "Large typography, clear focal points, and contrast help each design grab attention." },
+      { "title": "Curated core showcase", "description": "A selected group of thumbnail concepts presents the work clearly." },
+      { "title": "Bold visual treatment", "description": "Dramatic lighting, expressive cutouts, and visual storytelling strengthen click appeal." }
+    ],
+    "items": [
+      { "title": "AI Tutorial Cover", "label": "AI Tutorial" },
+      { "title": "Dropshipping Progress Story", "label": "Ecommerce" },
+      { "title": "Side Hustle Layout Variant", "label": "Before / After" },
+      { "title": "Creator Wall Showcase", "label": "Creator Branding" }
+    ]
+  },
+  "websitePage": {
+    "portfolio": {
+      "eyebrow": "Website Development",
+      "title": "Live website launches and premium interface work arranged like a real agency showcase.",
+      "description": "This page combines live project links, launch-ready website work, and visual development previews so Zepra Tech can present website delivery in a cleaner and more credible format.",
+      "visitProject": "Visit project",
+      "startProject": "Start a similar project",
+      "livePortfolio": "Live Portfolio",
+      "websitePresentation": "Website Presentation",
+      "openProject": "Open project",
+      "webAppsEyebrow": "Interactive Web Products",
+      "webAppsTitle": "Additional product-style web experiences presented with polished visuals and clean project framing.",
+      "webAppsDescription": "This showcase adds interactive tools, game-style interfaces, and AI-led product concepts to the website development portfolio.",
+      "liveProjects": [
+        { "title": "Raahvo Shop", "category": "Ecommerce Store", "status": "Live Store", "summary": "A live ecommerce storefront focused on polished product presentation, a cleaner shopping flow, and premium retail positioning.", "tags": ["Ecommerce", "Storefront", "Client Launch"] },
+        { "title": "Business Website Deployment", "category": "Website Development", "status": "Live Deployment", "summary": "A deployed business website prepared for client-facing presentation, responsive use, and growth-focused expansion.", "tags": ["Business Site", "Responsive", "Deployment"] },
+        { "title": "Custom Website Deployment", "category": "Website Development", "status": "Live Deployment", "summary": "A live custom website showcasing frontend delivery, clean structure, and production-ready deployment.", "tags": ["Custom Build", "Frontend", "Production"] },
+        { "title": "Web Platform Launch", "category": "Web Platform", "status": "Live Platform", "summary": "A stable web platform deployment with technical implementation and client-ready presentation.", "tags": ["Platform", "Launch", "Technical Delivery"] },
+        { "title": "Admin Dashboard Access", "category": "Admin Panel", "status": "Admin Access", "summary": "An admin environment highlighting backend control, operational visibility, and management workflows.", "tags": ["Dashboard", "Admin Panel", "Operations"] },
+        { "title": "Rehman M Portfolio", "category": "Personal Portfolio", "status": "Live Portfolio", "summary": "A personal portfolio built for professional positioning, clear project presentation, and a stronger online brand.", "tags": ["Portfolio Site", "Personal Brand", "Professional UI"] }
+      ],
+      "developmentShowcases": [
+        { "title": "Custom Frontend Showcase", "badge": "Website Development", "summary": "A detailed UI showcase with premium frontend styling, layered content, and polished responsive presentation.", "buttonLabel": "Visit custom website", "tags": ["Frontend UI", "Responsive Design", "Premium Layout"] },
+        { "title": "Personal Portfolio Website", "badge": "Website Development", "summary": "A clean personal portfolio for professional positioning, clear services, and a confident first impression.", "buttonLabel": "Visit live portfolio", "tags": ["Portfolio Site", "Personal Brand", "Responsive UI"] }
+      ],
+      "webApps": [
+        { "title": "Content Repurposing Platform", "category": "AI Content Tool", "summary": "A creator-focused interface that turns one content input into channel-ready outputs with an AI workflow.", "tags": ["AI Tool", "Creator Workflow", "Web App"] },
+        { "title": "Resume Optimization Platform", "category": "AI Career Product", "summary": "A resume improvement experience structured around scoring, optimization, and job-seeker conversion flows.", "tags": ["AI Product", "SaaS UI", "Lead Conversion"] },
+        { "title": "Interactive Story Experience", "category": "Narrative Web App", "summary": "A cinematic story interface for immersive interaction, choice-driven engagement, and rich presentation.", "tags": ["Story UI", "Interactive Design", "Atmospheric"] },
+        { "title": "Chess Arena Platform", "category": "Online Game Interface", "summary": "A competitive chess interface with multiplayer actions, computer play, and leaderboards.", "tags": ["Game UI", "Leaderboard", "Interactive"] },
+        { "title": "Escape Room Platform", "category": "Puzzle Product", "summary": "A dark puzzle concept centered on room creation, challenge flow, and game discovery.", "tags": ["Puzzle", "Game Design", "Product UI"] },
+        { "title": "Typing Race Experience", "category": "Skill-Based Web App", "summary": "A neon typing challenge focused on reaction, speed, and competitive practice.", "tags": ["Game UI", "Typing App", "Dark Theme"] },
+        { "title": "Word Challenge Arena", "category": "Competitive Web App", "summary": "A multiplayer word and typing competition with score-focused interaction and simple onboarding.", "tags": ["Word Game", "Multiplayer", "Web App"] },
+        { "title": "Maze Puzzle Experience", "category": "Interactive Puzzle Game", "summary": "A grid-based maze challenge built around timing, obstacles, and clear difficulty controls.", "tags": ["Maze Game", "Game UX", "Interactive"] }
+      ]
+    },
+    "wiki": {
+      "eyebrow": "Featured Website Case Study",
+      "title": "Wiki RG arranged as a complete research collaboration platform with clearer product storytelling.",
+      "screens": [
+        { "title": "Research Group Profile", "label": "Institution Setup", "summary": "A profile view combining institutional details, gallery management, and public group information in one admin layout." },
+        { "title": "Analytics Dashboard", "label": "Platform Analytics", "summary": "A dashboard showing login activity, member counts, project visibility, and platform activity." },
+        { "title": "Publication Detail Workspace", "label": "Research Publishing", "summary": "A publication workspace for research entries, details, metadata, and editing workflows." },
+        { "title": "Event Creation Module", "label": "Event Management", "summary": "An event form for scheduling, registration links, organizer details, and resources." },
+        { "title": "Project Tracking Panel", "label": "Project Management", "summary": "A project card view for assignments, project status, and internal tracking." }
+      ]
+    }
+  }
+}

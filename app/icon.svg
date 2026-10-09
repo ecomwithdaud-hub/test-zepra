@@ -1,0 +1,21 @@
+<svg width="128" height="128" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="80" height="80" rx="22" fill="url(#logo-bg)" />
+  <path
+    d="M18 21H56.5L49.5 31H33L60.5 31L19.5 59H57L50 69H18L58 41H18L25 31H44.5L18 31V21Z"
+    fill="#F6F9FF"
+  />
+  <path
+    d="M49.5 12.5C56 12 60.5 15.5 64 20L68 25C70.5 28.5 73 31 78 31C72.5 31 69 34 66.5 38.5L63.5 43.5C60.5 49 55.5 51 49.5 50.5L39.5 49.5L49 35.5H52C56.5 35.5 59.5 34 61.5 30.5L57.5 25C55.5 22.5 52.5 21.5 49.5 21.5H43L49.5 12.5Z"
+    fill="url(#logo-wave)"
+  />
+  <defs>
+    <linearGradient id="logo-bg" x1="12" y1="10" x2="76" y2="72" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#08111F" />
+      <stop offset="1" stop-color="#123A66" />
+    </linearGradient>
+    <linearGradient id="logo-wave" x1="43" y1="15" x2="80" y2="43" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38C6FF" />
+      <stop offset="1" stop-color="#1277FF" />
+    </linearGradient>
+  </defs>
+</svg>
