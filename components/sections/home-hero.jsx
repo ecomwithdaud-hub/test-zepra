@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 
 import { HeroParticles } from "@/components/ui/HeroParticles";
+import { InfiniteMarquee } from "@/components/ui/InfiniteMarquee";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { useLanguage } from "@/components/providers/language-provider";
 import { heroHighlights } from "@/lib/site";
@@ -296,26 +297,19 @@ export function HomeHero() {
         </div>
       </div>
 
-      {/* DevCrafter Signature 3D Tilted Perspective Marquee */}
-      <div className="relative mt-16 overflow-hidden py-6">
-        <div
-          className="relative -mx-8 flex border-y border-white/10 bg-[#070d1c] py-6 shadow-[0_30px_70px_rgba(0,0,0,0.8)]"
-          style={{
-            transform: "perspective(1000px) rotateX(10deg) rotateZ(-1.4deg) scale(1.04)",
-          }}
-        >
-          <div className="capability-marquee-track flex w-max items-center whitespace-nowrap">
-            {marqueeItems.map((cap, idx) => (
-              <span
-                key={`${cap}-${idx}`}
-                className="mx-8 inline-flex items-center gap-8 font-display text-2xl font-black uppercase tracking-[0.22em] text-white/60 transition-colors duration-300 hover:text-cyan-300 sm:text-4xl"
-              >
-                <span>{translatedCapabilities?.[idx % capabilities.length] ?? cap}</span>
-                <span className="h-3.5 w-3.5 rotate-45 rounded-sm bg-cyan-400/70 shadow-[0_0_15px_rgba(56,198,255,0.7)]" />
-              </span>
-            ))}
-          </div>
-        </div>
+      {/* Clean Non-Overlapping Capability Marquee */}
+      <div className="mt-14 w-full overflow-hidden border-y border-white/10 bg-[#070d1c]/90 py-4 backdrop-blur-md">
+        <InfiniteMarquee direction="left" speed="28s">
+          {capabilities.map((cap, idx) => (
+            <span
+              key={cap}
+              className="mx-3 inline-flex shrink-0 items-center gap-3 whitespace-nowrap rounded-full border border-white/12 bg-white/[0.04] px-5 py-2.5 text-xs font-bold uppercase tracking-[0.2em] text-slate-200 transition-colors duration-300 hover:border-cyan-400/50 hover:text-cyan-300 sm:text-sm"
+            >
+              <span className="h-2 w-2 shrink-0 rotate-45 rounded-sm bg-cyan-400 shadow-[0_0_10px_rgba(56,198,255,0.8)]" />
+              <span>{translatedCapabilities?.[idx] ?? cap}</span>
+            </span>
+          ))}
+        </InfiniteMarquee>
       </div>
     </section>
   );
