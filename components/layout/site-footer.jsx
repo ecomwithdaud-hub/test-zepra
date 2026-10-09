@@ -62,18 +62,18 @@ const navigationGroups = [
   {
     title: "Resources",
     links: [
-      { label: "Case Studies", href: "/case-studies" },
-      { label: "Portfolio", href: "/website-development" },
-      { label: "Blogs", href: "/case-studies" },
+      { label: "Portfolio", href: "/portfolio" },
+      { label: "Case Studies", href: "/portfolio#case-studies-section" },
+      { label: "Web Demos (24)", href: "/portfolio#web-development" },
       { label: "Guides", href: "/services" },
-      { label: "News", href: "/case-studies" },
+      { label: "News", href: "/portfolio#case-studies-section" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About Us", href: "/about" },
-      { label: "Case Studies", href: "/case-studies" },
+      { label: "Portfolio & Case Studies", href: "/portfolio" },
       { label: "Careers", href: "/contact" },
       { label: "Contact Us", href: "/contact" },
       { label: "Partner Program", href: "/contact" },

@@ -243,19 +243,19 @@ export function DevCrafterHomeExperience() {
 
               <div className="flex flex-wrap gap-3 pt-2">
                 <Link
-                  href="/website-development"
+                  href="/portfolio"
                   data-cursor="EXPLORE"
                   className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-blue to-brand-cyan px-6 py-3 text-xs font-bold uppercase tracking-wider text-slate-950 shadow-lg transition hover:brightness-110"
                 >
-                  <span>Explore 24 Live Demo Sites</span>
+                  <span>Explore Portfolio & 24 Live Demos</span>
                   <ArrowUpRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  href="/case-studies"
+                  href="/portfolio#case-studies-section"
                   data-cursor="DETAIL"
                   className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition hover:border-cyan-400/40 hover:bg-white/10"
                 >
-                  <span>Read Case Studies</span>
+                  <span>Jump to Case Studies</span>
                 </Link>
               </div>
             </div>
@@ -574,11 +574,11 @@ export function DevCrafterHomeExperience() {
               </Link>
 
               <Link
-                href="/website-development"
+                href="/portfolio"
                 data-cursor="EXPLORE"
                 className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white backdrop-blur-md transition hover:border-cyan-400/50 hover:bg-white/10 sm:text-sm"
               >
-                <span>Our Web Portfolio</span>
+                <span>Our Portfolio & Case Studies</span>
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>

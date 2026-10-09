@@ -227,20 +227,12 @@ export function HomeHero() {
             <div className="hidden h-7 w-px bg-white/15 sm:block" />
 
             <Link
-              href="/website-development"
+              href="/portfolio"
               data-cursor="EXPLORE"
               className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-5 text-xs font-bold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:border-cyan-400/50 hover:bg-white/10 sm:h-12 sm:px-7 sm:text-sm"
             >
-              <span>Web Portfolios (24 Live)</span>
+              <span>View Portfolio & Case Studies</span>
               <ArrowUpRight className="h-4 w-4 text-cyan-300" />
-            </Link>
-
-            <Link
-              href="/case-studies"
-              data-cursor="DETAIL"
-              className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-white/10 bg-transparent px-4 text-xs font-bold uppercase tracking-[0.15em] text-slate-300 transition-all duration-300 hover:text-cyan-300 sm:h-12 sm:px-5 sm:text-sm"
-            >
-              <span>Case Studies</span>
             </Link>
           </div>
 

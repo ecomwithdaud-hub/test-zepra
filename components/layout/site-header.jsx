@@ -33,6 +33,7 @@ const navTranslationKeys = {
   "/": "nav.home",
   "/about": "nav.about",
   "/services": "nav.services",
+  "/portfolio": "nav.portfolio",
   "/case-studies": "nav.caseStudies",
   "/contact": "nav.contact",
 };
@@ -44,6 +45,14 @@ const projectTranslationKeys = {
   "/thumbnail-designing": "nav.thumbnailDesigning",
 };
 
+const portfolioRelatedPaths = [
+  "/portfolio",
+  "/website-development",
+  "/case-studies",
+  "/social-media-marketing",
+  "/thumbnail-designing",
+];
+
 function isPathActive(pathname, href) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
@@ -53,6 +62,9 @@ function isItemActive(item, pathname) {
 
   if (!item.href) return childActive;
   if (item.href === "/") return pathname === "/";
+  if (item.href === "/portfolio") {
+    return portfolioRelatedPaths.some((p) => isPathActive(pathname, p));
+  }
   return isPathActive(pathname, item.href) || childActive;
 }
 
