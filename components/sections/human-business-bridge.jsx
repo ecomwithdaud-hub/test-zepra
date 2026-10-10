@@ -36,6 +36,8 @@ const INDUSTRY_PROFILES = [
   {
     id: "contractors",
     name: "Contractors & Home Services",
+    shortTitle: "Home Services",
+    microTag: "Roofing, Plumbing, Auto",
     subtitle: "Roofing, Plumbing, HVAC, Electricians & Auto",
     icon: Wrench,
     badge: "Most Popular For Local Leads",
@@ -60,6 +62,8 @@ const INDUSTRY_PROFILES = [
   {
     id: "healthcare",
     name: "Clinics, MedSpas & Doctors",
+    shortTitle: "Clinics & Doctors",
+    microTag: "Dentists, MedSpa, Care",
     subtitle: "Dentists, Aesthetic Clinics, Wellness & Doctors",
     icon: Stethoscope,
     badge: "High Patient Trust",
@@ -83,6 +87,8 @@ const INDUSTRY_PROFILES = [
   {
     id: "textiles-manufacturing",
     name: "Textiles, Manufacturing & Export",
+    shortTitle: "Textile & Export",
+    microTag: "Mills, Fabrics, B2B",
     subtitle: "Garments, Fabrics, Mills & B2B Production",
     icon: Scissors,
     badge: "Built for Wholesale & Exporters",
@@ -106,6 +112,8 @@ const INDUSTRY_PROFILES = [
   {
     id: "retail-ecommerce",
     name: "Retail, Boutiques & E-Commerce",
+    shortTitle: "Retail & E-Com",
+    microTag: "Boutiques, Brands, Carts",
     subtitle: "Fashion, Accessories, Jewelry & Consumer Brands",
     icon: ShoppingBag,
     badge: "Higher Conversion Rates",
@@ -129,6 +137,8 @@ const INDUSTRY_PROFILES = [
   {
     id: "restaurants-hospitality",
     name: "Restaurants & Hospitality",
+    shortTitle: "Restaurants",
+    microTag: "Cafes, Menus, Dining",
     subtitle: "Cafes, Fine Dining, Bistros & Event Venues",
     icon: UtensilsCrossed,
     badge: "Local Foot Traffic",
@@ -151,6 +161,8 @@ const INDUSTRY_PROFILES = [
   {
     id: "tech-startups",
     name: "Tech Startups & Modern Brands",
+    shortTitle: "Tech & Startups",
+    microTag: "SaaS, AI, Platforms",
     subtitle: "SaaS Platforms, AI Tools & Digital Enterprises",
     icon: Zap,
     badge: "Advanced Next.js 15 & AI",
@@ -349,25 +361,29 @@ export function HumanBusinessBridge() {
               const isSelected = selectedIndustry.id === ind.id;
               return (
                 <button
+                  type="button"
                   key={ind.id}
                   onClick={() => setSelectedIndustry(ind)}
-                  className={`group flex flex-col items-center rounded-2xl border p-4 text-center transition-all ${
+                  className={`group relative flex w-full min-w-0 flex-col items-center justify-center rounded-2xl border p-3 text-center transition-all !whitespace-normal sm:p-4 ${
                     isSelected
-                      ? "border-cyan-400 bg-cyan-400/10 shadow-[0_0_25px_rgba(56,198,255,0.25)]"
-                      : "border-white/10 bg-slate-950/60 hover:border-white/25 hover:bg-white/[0.04]"
+                      ? "border-cyan-400 bg-cyan-400/15 shadow-[0_0_25px_rgba(56,198,255,0.25)] ring-1 ring-cyan-400/40"
+                      : "border-white/10 bg-slate-950/70 hover:border-white/25 hover:bg-white/[0.04]"
                   }`}
                 >
                   <span
-                    className={`flex h-11 w-11 items-center justify-center rounded-xl transition-colors ${
+                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-colors ${
                       isSelected
-                        ? "bg-cyan-400 text-slate-950"
+                        ? "bg-cyan-400 text-slate-950 shadow-md"
                         : "bg-white/5 text-slate-300 group-hover:text-cyan-300"
                     }`}
                   >
-                    <Icon className="h-5 w-5" />
+                    <Icon className="h-5 w-5 shrink-0" />
                   </span>
-                  <span className="mt-3 text-xs font-bold text-white sm:text-sm">
-                    {ind.name}
+                  <span className="mt-2.5 block w-full !whitespace-normal break-words text-center text-xs font-bold leading-snug text-white sm:text-sm">
+                    {ind.shortTitle || ind.name}
+                  </span>
+                  <span className="mt-1 hidden w-full !whitespace-normal text-center text-[10px] font-medium leading-tight text-slate-400 lg:block">
+                    {ind.microTag}
                   </span>
                 </button>
               );
@@ -379,7 +395,9 @@ export function HumanBusinessBridge() {
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
               {/* Left Column: Clear Explanation & Deliverables */}
               <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-bold text-cyan-300">
+                <div className="inline-flex flex-wrap items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-bold text-cyan-300">
+                  <span className="text-white font-extrabold">{selectedIndustry.name}</span>
+                  <span className="text-cyan-400/60">•</span>
                   <span>{selectedIndustry.badge}</span>
                 </div>
 
