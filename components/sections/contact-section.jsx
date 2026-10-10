@@ -23,7 +23,7 @@ export function ContactSection({ showHeader = true }) {
   return (
     <section
       id="contact"
-      className="section-shell relative isolate overflow-hidden bg-gradient-to-b from-[#E8F2FF] via-[#0F172A] to-[#090D16]"
+      className="section-shell relative isolate overflow-hidden bg-slate-950 text-white border-t border-white/10"
     >
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 2xl:max-w-[1600px] 3xl:max-w-[1800px]">
         {showHeader ? (
@@ -31,8 +31,9 @@ export function ContactSection({ showHeader = true }) {
             eyebrow={t("contact.eyebrow")}
             title={t("contact.title")}
             description={t("contact.description")}
-            eyebrowClassName="px-5 py-2 text-xs sm:text-sm font-semibold"
-            descriptionClassName="text-sm sm:text-base font-medium leading-relaxed text-slate-700"
+            eyebrowClassName="px-5 py-2 text-xs sm:text-sm font-semibold border-cyan-400/30 bg-cyan-400/10 text-cyan-300"
+            titleClassName="text-white"
+            descriptionClassName="text-sm sm:text-base font-medium leading-relaxed text-slate-300"
           />
         ) : null}
 
@@ -57,13 +58,13 @@ export function ContactSection({ showHeader = true }) {
         </div>
 
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          <div className="flex h-full flex-col justify-between rounded-2xl border border-slate-200/80 bg-white/95 p-7 shadow-lg backdrop-blur-md lg:col-span-5">
+          <div className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-slate-900/90 p-7 shadow-2xl backdrop-blur-xl lg:col-span-5">
             <div>
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-800">
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-400">
                 <span className="h-2 w-2 rounded-full bg-emerald-400" />
                 {t("contact.businessInquiry")}
               </div>
-              <h2 className="mt-4 font-display text-2xl font-semibold leading-tight text-slate-950">
+              <h2 className="mt-4 font-display text-2xl font-semibold leading-tight text-white">
                 {t("contact.optionsTitle")}
               </h2>
 
@@ -84,26 +85,26 @@ export function ContactSection({ showHeader = true }) {
               </div>
 
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                <Button asChild size="lg" className="w-full">
+                <Button asChild size="lg" className="w-full bg-cyan-400 text-slate-950 font-bold hover:bg-cyan-300">
                   <Link
                     href={siteMeta.whatsappLink}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <MessageCircle className="h-4 w-4" />
+                    <MessageCircle className="h-4 w-4 mr-1.5" />
                     {t("contact.chatWhatsapp")}
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="w-full">
+                <Button asChild size="lg" variant="outline" className="w-full border-slate-700 bg-slate-950/60 text-white hover:bg-slate-800">
                   <Link href={`mailto:${siteMeta.email}`}>
-                    <Mail className="h-4 w-4" />
+                    <Mail className="h-4 w-4 mr-1.5" />
                     {t("contact.sendEmail")}
                   </Link>
                 </Button>
               </div>
 
-              <div className="mt-6 border-t border-slate-200 pt-5">
-                <h3 className="text-sm font-semibold text-slate-900">
+              <div className="mt-6 border-t border-white/10 pt-5">
+                <h3 className="text-sm font-semibold text-slate-200">
                   {t("contact.socialPresence")}
                 </h3>
                 <div className="mt-3 flex flex-wrap gap-2">
@@ -111,7 +112,7 @@ export function ContactSection({ showHeader = true }) {
                     <Link
                       key={social.label}
                       href={social.href}
-                      className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-medium text-slate-700 transition-colors hover:border-cyan-300 hover:bg-white hover:text-cyan-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
+                      className="inline-flex items-center gap-1 rounded-full border border-slate-800 bg-slate-950/80 px-3 py-1.5 text-xs font-medium text-slate-300 transition-colors hover:border-cyan-400 hover:text-cyan-300"
                     >
                       {social.label}
                       <ArrowUpRight className="h-3 w-3" />
@@ -121,14 +122,14 @@ export function ContactSection({ showHeader = true }) {
               </div>
 
               <div className="mt-4">
-                <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
                   {t("contact.scheduleCall")}
                 </h3>
                 <Link
                   href={`${siteMeta.whatsappLink}?text=${encodeURIComponent(t("contact.bookingMessage"))}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex cursor-pointer items-center justify-between gap-4 rounded-2xl border border-white/30 bg-primary p-4 text-white shadow-sm transition-all duration-300 hover:bg-primary/95 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                  className="group flex cursor-pointer items-center justify-between gap-4 rounded-2xl border border-white/15 bg-primary/90 p-4 text-white shadow-sm transition-all duration-300 hover:bg-primary hover:shadow-md"
                 >
                   <span className="flex min-w-0 items-center gap-3">
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/15 text-white ring-1 ring-white/25">
@@ -151,29 +152,29 @@ export function ContactSection({ showHeader = true }) {
               </div>
 
               {/* Founder Video Teardown Hook */}
-              <div className="mt-4 rounded-2xl border border-dashed border-cyan-500/40 bg-cyan-50/70 p-4">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-cyan-900">
-                  <span className="flex h-2 w-2 rounded-full bg-cyan-600" />
+              <div className="mt-4 rounded-2xl border border-dashed border-cyan-500/30 bg-cyan-950/20 p-4">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-cyan-300">
+                  <span className="flex h-2 w-2 rounded-full bg-cyan-400" />
                   Not Ready for a Sprint?
                 </div>
-                <h4 className="mt-1 font-display text-sm font-bold text-slate-900">
+                <h4 className="mt-1 font-display text-sm font-bold text-white">
                   Request Founder Daud's 5-Minute Video Teardown
                 </h4>
-                <p className="mt-1 text-xs text-slate-600 leading-relaxed">
+                <p className="mt-1 text-xs text-slate-300 leading-relaxed">
                   Send your current website URL via WhatsApp. Daud will record an unfiltered screen video exposing your conversion leaks and Core Web Vitals bottlenecks. 100% Free.
                 </p>
                 <Link
                   href={`${siteMeta.whatsappLink}?text=${encodeURIComponent("Hi Daud, I'd like to request a 5-minute video teardown of my website. Here is my URL: ")}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-cyan-800 hover:text-cyan-950 transition-colors"
+                  className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-cyan-300 hover:text-cyan-200 transition-colors"
                 >
                   Request Free Video Teardown <ArrowUpRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
             </div>
 
-            <div className="mt-6 border-t border-slate-200 pt-5">
+            <div className="mt-6 border-t border-white/10 pt-5">
               <ul className="grid gap-3 sm:grid-cols-3">
                 <TrustPoint
                   icon={<LockKeyhole className="h-4 w-4" />}
@@ -198,12 +199,12 @@ export function ContactSection({ showHeader = true }) {
               aria-hidden="true"
               className="pointer-events-none absolute -inset-4 -z-10 rounded-3xl bg-cyan-500/10 blur-3xl"
             />
-            <div className="flex h-full flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-7 shadow-xl">
+            <div className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-slate-900/95 p-7 shadow-2xl backdrop-blur-xl">
               <div className="mb-6">
-                <h2 className="font-display text-2xl font-semibold text-slate-950">
+                <h2 className="font-display text-2xl font-semibold text-white">
                   {t("contact.requestConsultation")}
                 </h2>
-                <p className="mt-2 text-sm leading-6 text-brand-slate">
+                <p className="mt-2 text-sm leading-6 text-slate-300">
                   {t("contact.formIntro")}
                 </p>
               </div>
@@ -221,16 +222,16 @@ function InfoRow({ icon, label, href, value, external = false }) {
     <a
       href={href}
       {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
-      className="group flex min-w-0 items-center gap-3 transition-colors hover:text-cyan-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
+      className="group flex min-w-0 items-center gap-3 transition-colors hover:text-cyan-300"
     >
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cyan-50 text-cyan-800">
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">
         {icon}
       </span>
       <span className="min-w-0">
-        <span className="block text-xs font-semibold text-slate-900">
+        <span className="block text-xs font-semibold text-slate-200">
           {label}
         </span>
-        <span className="mt-0.5 block break-words text-sm text-slate-600">
+        <span className="mt-0.5 block break-words text-sm text-slate-400">
           {value}
         </span>
       </span>
@@ -241,15 +242,15 @@ function InfoRow({ icon, label, href, value, external = false }) {
 function TrustPoint({ icon, title, detail }) {
   return (
     <li className="flex min-w-0 items-start gap-2">
-      <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cyan-50 text-cyan-800">
+      <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">
         {icon}
       </span>
       <span className="min-w-0">
-        <span className="block text-xs font-semibold leading-5 text-slate-900">
+        <span className="block text-xs font-semibold leading-5 text-slate-200">
           {title}
         </span>
         {detail ? (
-          <span className="block text-[11px] leading-4 text-slate-500">{detail}</span>
+          <span className="block text-[11px] leading-4 text-slate-400">{detail}</span>
         ) : null}
       </span>
     </li>

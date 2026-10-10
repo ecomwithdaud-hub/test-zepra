@@ -255,7 +255,7 @@ export function PricingTiers() {
                     className={`w-full font-bold transition-all ${
                       tier.popular
                         ? "bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 hover:brightness-110 shadow-lg shadow-cyan-500/25"
-                        : "bg-white text-slate-950 hover:bg-slate-100"
+                        : "border border-white/15 bg-white/10 text-white hover:bg-white/20 hover:border-cyan-400/40"
                     }`}
                   >
                     <Link href={`${tier.href}?tier=${tier.id}`}>

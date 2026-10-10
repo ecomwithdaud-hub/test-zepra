@@ -18,7 +18,7 @@ export function AboutPreview({ showCta = true }) {
   );
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#E6F2FF] py-16 lg:py-24 text-slate-900 transition-all duration-500">
+    <section className="relative isolate overflow-hidden bg-slate-950 py-16 lg:py-24 text-white border-t border-white/10 transition-all duration-500">
       <CyberCircuitBackground />
       {/* Background Soft Glow */}
       <div
@@ -33,30 +33,29 @@ export function AboutPreview({ showCta = true }) {
               eyebrow={t("about.eyebrow")}
               title={t("about.title")}
               description={t("about.description")}
-              className="[&_h2]:text-slate-900 [&_p]:text-slate-700"
             />
 
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
-              <div className="group relative overflow-hidden rounded-2xl border border-cyan-500/20 bg-white/80 p-6 shadow-md backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-400 hover:bg-white hover:shadow-cyan-500/10">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-700 shadow-inner transition-colors duration-300 group-hover:bg-cyan-500 group-hover:text-white">
+              <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/80 p-6 shadow-md backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-400/50 hover:bg-slate-900 hover:shadow-cyan-500/10">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 shadow-inner transition-colors duration-300 group-hover:bg-cyan-500 group-hover:text-slate-950">
                   <Compass className="h-6 w-6" />
                 </div>
-                <h3 className="mt-4 font-display text-xl font-semibold text-slate-900">
+                <h3 className="mt-4 font-display text-xl font-semibold text-white">
                   {t("about.brandStory")}
                 </h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-slate-600">
+                <p className="mt-2.5 text-sm leading-relaxed text-slate-300">
                   {t("about.brandStoryText")}
                 </p>
               </div>
 
-              <div className="group relative overflow-hidden rounded-2xl border border-cyan-500/20 bg-white/80 p-6 shadow-md backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-400 hover:bg-white hover:shadow-cyan-500/10">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-700 shadow-inner transition-colors duration-300 group-hover:bg-cyan-500 group-hover:text-white">
+              <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/80 p-6 shadow-md backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-400/50 hover:bg-slate-900 hover:shadow-cyan-500/10">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 shadow-inner transition-colors duration-300 group-hover:bg-cyan-500 group-hover:text-slate-950">
                   <ShieldCheck className="h-6 w-6" />
                 </div>
-                <h3 className="mt-4 font-display text-xl font-semibold text-slate-900">
+                <h3 className="mt-4 font-display text-xl font-semibold text-white">
                   {t("about.missionDriven")}
                 </h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-slate-600">
+                <p className="mt-2.5 text-sm leading-relaxed text-slate-300">
                   {t("about.missionText")}
                 </p>
               </div>
@@ -64,10 +63,10 @@ export function AboutPreview({ showCta = true }) {
 
             {showCta ? (
               <div className="mt-8">
-                <Button asChild variant="outline" size="lg" className="border-cyan-500/30 bg-white text-cyan-900 hover:bg-cyan-50 hover:text-cyan-950 shadow-sm transition-all duration-300">
+                <Button asChild variant="outline" size="lg" className="border-cyan-400/30 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20 hover:text-white shadow-sm transition-all duration-300">
                   <Link href="/about" className="inline-flex items-center gap-2 font-medium">
                     {t("about.learnMore")}
-                    <ArrowRight className="h-4 w-4 text-cyan-600" />
+                    <ArrowRight className="h-4 w-4 text-cyan-400" />
                   </Link>
                 </Button>
               </div>
@@ -78,12 +77,12 @@ export function AboutPreview({ showCta = true }) {
             {displayedPillars.map((pillar, index) => (
               <Card
                 key={pillar.title}
-                className={`group relative overflow-hidden rounded-2xl border border-cyan-500/20 bg-white/80 p-1 text-slate-900 shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:bg-white hover:shadow-xl hover:shadow-cyan-500/10 ${
+                className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/80 p-1 text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/50 hover:bg-slate-900 hover:shadow-xl hover:shadow-cyan-500/10 ${
                   index === 1 ? "lg:translate-x-4" : ""
                 }`}
               >
                 <CardHeader className="flex-row items-start gap-4 p-5">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-600 shadow-inner transition-all duration-300 group-hover:bg-cyan-500 group-hover:text-white">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 shadow-inner transition-all duration-300 group-hover:bg-cyan-500 group-hover:text-slate-950">
                     {index === 0 ? (
                       <Building2 className="h-6 w-6" />
                     ) : index === 1 ? (
@@ -93,11 +92,11 @@ export function AboutPreview({ showCta = true }) {
                     )}
                   </div>
                   <div className="flex-1">
-                    <CardTitle className="text-lg font-semibold text-slate-900 group-hover:text-cyan-700 transition-colors duration-300">
+                    <CardTitle className="text-lg font-semibold text-white group-hover:text-cyan-300 transition-colors duration-300">
                       {pillar.title}
                     </CardTitle>
                     <CardContent className="px-0 pb-0 pt-2">
-                      <p className="text-sm leading-relaxed text-slate-600">
+                      <p className="text-sm leading-relaxed text-slate-300">
                         {pillar.description}
                       </p>
                     </CardContent>

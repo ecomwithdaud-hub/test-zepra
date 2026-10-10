@@ -72,7 +72,7 @@ export function TheShiftSection() {
       ];
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#E6F2FF] py-8 text-slate-900 sm:py-12">
+    <section className="relative isolate overflow-hidden bg-slate-950 py-8 text-white sm:py-12 border-t border-white/10">
       {/* Background Ambient Glow */}
       <div
         aria-hidden="true"
@@ -82,17 +82,17 @@ export function TheShiftSection() {
       <div className="container relative mx-auto px-4">
         {/* Section Header */}
         <header className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-700/20 bg-white/80 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-800 shadow-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-300 shadow-sm">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70 motion-reduce:animate-none" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
             </span>
             {content?.eyebrow || "THE AI REVOLUTION IN OPERATIONS"}
           </div>
-          <h2 className="mt-4 font-display text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-4 font-display text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
             {content?.title || "Transforming Business Operations with AI + Data Science."}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-700 sm:text-base">
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
             {content?.description || "The shift to AI-native operations means moving away from slow, manual processes. We build custom AI automation, intelligent data pipelines, and bank-grade data security into your business—making it work faster, smarter, and scale effortlessly."}
           </p>
         </header>
@@ -101,26 +101,26 @@ export function TheShiftSection() {
         <div className="mt-8 grid gap-6 lg:grid-cols-2">
           
           {/* Card 1: Legacy Model */}
-          <div className="relative flex flex-col justify-between rounded-2xl border border-slate-300/80 bg-white/90 p-5 shadow-md backdrop-blur-sm sm:p-6">
+          <div className="relative flex flex-col justify-between rounded-2xl border border-white/10 bg-slate-900/80 p-5 shadow-md backdrop-blur-sm sm:p-6 text-white">
             <div>
               <div className="flex items-center justify-between">
-                <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold tracking-wider text-slate-600 uppercase border border-slate-200">
+                <span className="rounded-full bg-white/5 px-3 py-1 text-xs font-bold tracking-wider text-slate-300 uppercase border border-white/10">
                   {content?.legacyTag || "LEGACY MODEL"}
                 </span>
-                <span className="text-xs font-semibold text-rose-500">{content?.legacyStatus || "Slow & Expensive"}</span>
+                <span className="text-xs font-semibold text-rose-400">{content?.legacyStatus || "Slow & Expensive"}</span>
               </div>
-              <h3 className="mt-4 text-xl font-bold text-slate-900">
+              <h3 className="mt-4 text-xl font-bold text-white">
                 {content?.legacyTitle || "Traditional Manual Business Operations"}
               </h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-600">
+              <p className="mt-2 text-xs leading-relaxed text-slate-400">
                 {content?.legacyDescription || "Standard operational setups relying on traditional human hours and fragmented tools."}
               </p>
 
-              <ul className="mt-6 space-y-4 text-sm text-slate-700">
+              <ul className="mt-6 space-y-4 text-sm text-slate-300">
                 {legacyPointsList.map((point, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-600 text-xs font-bold">✕</span>
-                    <span><strong>{point.label}:</strong> {point.description}</span>
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-rose-500/10 text-rose-400 text-xs font-bold">✕</span>
+                    <span><strong className="text-white">{point.label}:</strong> {point.description}</span>
                   </li>
                 ))}
               </ul>

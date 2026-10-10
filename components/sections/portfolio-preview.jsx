@@ -25,7 +25,7 @@ export function PortfolioPreview({
   const content = t("websitePage.portfolio");
 
   return (
-    <section id="website-development" className="section-shell relative isolate scroll-mt-32 overflow-hidden">
+    <section id="website-development" className="section-shell relative isolate scroll-mt-32 overflow-hidden bg-slate-950 text-white border-t border-white/10">
       <CyberCircuitBackground />
       <div className="container relative z-10">
         <div className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr] xl:items-start">
@@ -42,19 +42,19 @@ export function PortfolioPreview({
                 return (
                 <Card
                   key={project.href}
-                  className={`card-shine h-full border-slate-200/80 bg-white/90 transition-all duration-300 hover:-translate-y-1 hover:shadow-premium ${
+                  className={`card-shine h-full border border-white/10 bg-slate-900/85 text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/50 hover:bg-slate-900 hover:shadow-2xl ${
                     index === 1 || index === 3 ? "md:translate-y-6" : ""
                   }`}
                 >
                   <CardHeader className="gap-4">
                     <div className="flex items-start justify-between gap-4">
                       <div className="space-y-2">
-                        <Badge variant="secondary">{translatedProject.category}</Badge>
-                        <div className="text-sm font-medium text-primary">
+                        <Badge variant="secondary" className="border border-cyan-400/30 bg-cyan-400/10 text-cyan-300">{translatedProject.category}</Badge>
+                        <div className="text-sm font-medium text-cyan-400">
                           {translatedProject.status}
                         </div>
                       </div>
-                      <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-950 text-white shadow-glow">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-400/30 bg-cyan-500/10 text-cyan-300 shadow-glow">
                         {project.category === "Admin Panel" ? (
                           <MonitorSmartphone className="h-5 w-5" />
                         ) : (
@@ -63,19 +63,19 @@ export function PortfolioPreview({
                       </div>
                     </div>
                     <div>
-                      <CardTitle className="text-2xl">{translatedProject.title}</CardTitle>
-                      <div className="mt-2 text-sm font-medium text-brand-slate">
+                      <CardTitle className="text-2xl text-white">{translatedProject.title}</CardTitle>
+                      <div className="mt-2 text-sm font-medium text-slate-400">
                         {project.domain}
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-5">
-                    <p className="text-sm leading-7 text-brand-slate">
+                    <p className="text-sm leading-7 text-slate-300">
                       {translatedProject.summary}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {translatedProject.tags.map((tag) => (
-                        <Badge key={tag} variant="secondary" className="bg-slate-100">
+                        <Badge key={tag} variant="secondary" className="border border-white/10 bg-white/5 text-slate-300">
                           {tag}
                         </Badge>
                       ))}
@@ -110,14 +110,14 @@ export function PortfolioPreview({
               return (
               <Card
                 key={showcase.title}
-                className={`card-shine overflow-hidden border-slate-200/80 bg-white/92 ${
+                className={`card-shine overflow-hidden border border-white/10 bg-slate-900/85 text-white backdrop-blur-md ${
                   index === 1 ? "xl:-translate-x-4" : ""
                 }`}
               >
-                <div className="border-b border-slate-200/70 p-5">
-                  <Badge>{translatedShowcase.badge}</Badge>
-                  <CardTitle className="mt-4 text-2xl">{translatedShowcase.title}</CardTitle>
-                  <p className="mt-3 text-sm leading-7 text-brand-slate">
+                <div className="border-b border-white/10 p-5">
+                  <Badge variant="secondary" className="border border-cyan-400/30 bg-cyan-400/10 text-cyan-300">{translatedShowcase.badge}</Badge>
+                  <CardTitle className="mt-4 text-2xl text-white">{translatedShowcase.title}</CardTitle>
+                  <p className="mt-3 text-sm leading-7 text-slate-300">
                     {translatedShowcase.summary}
                   </p>
                 </div>
@@ -126,7 +126,7 @@ export function PortfolioPreview({
                     href={showcase.href ?? showcase.image}
                     target={showcase.href ? "_blank" : undefined}
                     rel={showcase.href ? "noreferrer" : undefined}
-                    className="group block overflow-hidden rounded-[24px] border border-slate-200/70 bg-slate-950"
+                    className="group block overflow-hidden rounded-[24px] border border-white/10 bg-slate-950"
                   >
                     {showcase.image ? (
                       <img
@@ -157,7 +157,7 @@ export function PortfolioPreview({
                           <p className="text-xs font-medium uppercase tracking-[0.32em] text-sky-200/80">
                             {content.websitePresentation}
                           </p>
-                          <div className="mt-4 text-4xl font-semibold leading-tight">
+                          <div className="mt-4 text-4xl font-semibold leading-tight text-white">
                             {translatedShowcase.title}
                           </div>
                           <p className="mt-4 text-sm leading-7 text-slate-200/88">
@@ -180,7 +180,7 @@ export function PortfolioPreview({
                   </Link>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {translatedShowcase.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary" className="bg-slate-100">
+                      <Badge key={tag} variant="secondary" className="border border-white/10 bg-white/5 text-slate-300">
                         {tag}
                       </Badge>
                     ))}
@@ -218,7 +218,7 @@ export function PortfolioPreview({
               return (
               <Card
                 key={project.href}
-                className="card-shine overflow-hidden border-slate-200/80 bg-white/92 transition-all duration-300 hover:-translate-y-1 hover:shadow-premium"
+                className="card-shine overflow-hidden border border-white/10 bg-slate-900/85 text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/50 hover:shadow-2xl"
               >
                 <CardContent className="p-0">
                   <Link
@@ -227,7 +227,7 @@ export function PortfolioPreview({
                     rel="noreferrer"
                     className="group block"
                   >
-                    <div className="overflow-hidden border-b border-slate-200/70 bg-slate-950">
+                    <div className="overflow-hidden border-b border-white/10 bg-slate-950">
                       <img
                         src={project.image}
                         alt={project.title}
@@ -239,18 +239,18 @@ export function PortfolioPreview({
 
                   <div className="space-y-5 p-5">
                     <div className="space-y-3">
-                      <Badge variant="secondary">{translatedProject.category}</Badge>
-                      <CardTitle className="text-2xl leading-tight">
+                      <Badge variant="secondary" className="border border-cyan-400/30 bg-cyan-400/10 text-cyan-300">{translatedProject.category}</Badge>
+                      <CardTitle className="text-2xl leading-tight text-white">
                         {translatedProject.title}
                       </CardTitle>
-                      <p className="text-sm leading-7 text-brand-slate">
+                      <p className="text-sm leading-7 text-slate-300">
                         {translatedProject.summary}
                       </p>
                     </div>
 
                     <div className="flex flex-wrap gap-2">
                       {translatedProject.tags.map((tag) => (
-                        <Badge key={tag} variant="secondary" className="bg-slate-100">
+                        <Badge key={tag} variant="secondary" className="border border-white/10 bg-white/5 text-slate-300">
                           {tag}
                         </Badge>
                       ))}

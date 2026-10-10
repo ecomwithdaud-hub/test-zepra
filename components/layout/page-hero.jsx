@@ -32,14 +32,14 @@ export function PageHero({
     <section className="section-shell relative isolate overflow-hidden pt-16">
       <CyberCircuitBackground />
       <div className="container relative z-10">
-        <div className="surface-panel relative overflow-hidden bg-white/[0.88] px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
+        <div className="surface-panel relative overflow-hidden bg-slate-900/80 border border-white/10 text-white backdrop-blur-xl px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
           <div className="absolute inset-y-0 right-0 hidden w-2/5 bg-brand-radial opacity-90 lg:block" />
           <div className="relative max-w-4xl">
             {resolvedEyebrow ? <div className="eyebrow">{resolvedEyebrow}</div> : null}
-            <h1 className="mt-6 max-w-3xl text-balance font-display text-4xl font-semibold leading-tight text-slate-950 sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 max-w-3xl text-balance font-display text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
               {resolvedTitle}
             </h1>
-            <p className="muted-copy mt-6 max-w-3xl text-base md:text-lg">{resolvedDescription}</p>
+            <p className="mt-6 max-w-3xl text-base leading-relaxed text-slate-300 md:text-lg">{resolvedDescription}</p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               {resolvedPrimaryAction ? (
@@ -60,9 +60,9 @@ export function PageHero({
             {stats.length ? (
               <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
                 {stats.map((stat) => (
-                  <div key={stat.label} className="rounded-[22px] border border-slate-200/70 bg-white/[0.85] p-5 shadow-soft">
-                    <div className="font-display text-2xl font-semibold text-slate-950">{stat.value}</div>
-                    <div className="mt-2 text-sm leading-6 text-brand-slate">{stat.label}</div>
+                  <div key={stat.label} className="rounded-[22px] border border-white/10 bg-slate-950/80 p-5 shadow-soft">
+                    <div className="font-display text-2xl font-semibold text-white">{stat.value}</div>
+                    <div className="mt-2 text-sm leading-6 text-slate-400">{stat.label}</div>
                   </div>
                 ))}
               </div>

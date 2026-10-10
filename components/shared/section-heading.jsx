@@ -20,11 +20,11 @@ export function SectionHeading({
       {eyebrow ? (
         <div className={cn("eyebrow", eyebrowClassName)}>{eyebrow}</div>
       ) : null}
-      <h2 className="mt-4 font-display text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl lg:text-[2.8rem]">
+      <h2 className="mt-4 font-display text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-[2.8rem]">
         {title}
       </h2>
       {description ? (
-        <p className={cn("muted-copy mt-5", descriptionClassName)}>
+        <p className={cn("mt-5 text-base leading-relaxed text-slate-300 md:text-lg", descriptionClassName)}>
           {description}
         </p>
       ) : null}

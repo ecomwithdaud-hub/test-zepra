@@ -153,24 +153,24 @@ export default async function ServiceDetailPage({ params }) {
       </section>
 
       {/* Use Cases vs Deliverables + Core Benefits */}
-      <section className="section-shell bg-white/60">
+      <section className="section-shell bg-slate-950 text-white border-t border-white/10">
         <div className="container">
           <div className="grid gap-8 lg:grid-cols-2">
             <TiltCard className="rounded-3xl">
-              <div className="h-full rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-soft sm:p-8">
+              <div className="h-full rounded-3xl border border-white/10 bg-slate-900/80 p-6 text-white shadow-soft backdrop-blur-md sm:p-8">
                 <p className="eyebrow">Use Cases & Capabilities</p>
-                <h2 className="mt-2 font-display text-2xl font-semibold text-slate-950 sm:text-3xl">
+                <h2 className="mt-2 font-display text-2xl font-semibold text-white sm:text-3xl">
                   When to choose our {service.title}
                 </h2>
                 <ul className="mt-6 space-y-4">
                   {service.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-start gap-3 text-slate-700"
+                      className="flex items-start gap-3 text-slate-300"
                     >
                       <Check
                         aria-hidden="true"
-                        className="mt-0.5 h-5 w-5 shrink-0 text-cyan-600"
+                        className="mt-0.5 h-5 w-5 shrink-0 text-cyan-400"
                       />
                       <span>{feature}</span>
                     </li>
@@ -180,7 +180,7 @@ export default async function ServiceDetailPage({ params }) {
             </TiltCard>
 
             <TiltCard className="rounded-3xl">
-              <div className="h-full rounded-3xl border border-slate-200/80 bg-slate-950 p-6 text-white shadow-soft sm:p-8">
+              <div className="h-full rounded-3xl border border-white/10 bg-slate-900/80 p-6 text-white shadow-soft backdrop-blur-md sm:p-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
                   Production Deliverables
                 </p>
@@ -191,7 +191,7 @@ export default async function ServiceDetailPage({ params }) {
                   {service.deliverables.map((deliverable) => (
                     <li
                       key={deliverable}
-                      className="flex items-start gap-3 text-sm leading-6 text-slate-200"
+                      className="flex items-start gap-3 text-sm leading-6 text-slate-300"
                     >
                       <CheckCircle2
                         aria-hidden="true"
@@ -206,18 +206,18 @@ export default async function ServiceDetailPage({ params }) {
           </div>
 
           {/* 8 Core Benefits Grid inspired by DevCrafter */}
-          <div className="mt-12 rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-soft sm:p-8">
+          <div className="mt-12 rounded-3xl border border-white/10 bg-slate-900/80 p-6 text-white shadow-soft backdrop-blur-md sm:p-8">
             <p className="eyebrow">Why Choose Zepra Tech</p>
-            <h3 className="mt-2 font-display text-2xl font-semibold text-slate-950">
+            <h3 className="mt-2 font-display text-2xl font-semibold text-white">
               Engineered for measurable business ROI
             </h3>
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {coreBenefits.map((benefit) => (
                 <div
                   key={benefit}
-                  className="flex items-center gap-2.5 rounded-2xl border border-slate-200/80 bg-slate-50/90 p-3.5 text-xs font-semibold text-slate-800 sm:text-sm"
+                  className="flex items-center gap-2.5 rounded-2xl border border-white/10 bg-slate-950/80 p-3.5 text-xs font-semibold text-slate-200 transition-colors hover:border-cyan-400/40 sm:text-sm"
                 >
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-600" />
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-400" />
                   <span>{benefit}</span>
                 </div>
               ))}
@@ -230,7 +230,7 @@ export default async function ServiceDetailPage({ params }) {
         <UsaDemoShowcase initialLimit={12} showViewAllLink={true} />
       ) : null}
 
-      <section className="section-shell bg-slate-950 text-white">
+      <section className="section-shell bg-slate-950 text-white border-t border-white/10">
         <div className="container">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
             Technology & Tools
@@ -252,23 +252,23 @@ export default async function ServiceDetailPage({ params }) {
       </section>
 
       {/* 6-Step Engineering Methodology */}
-      <section className="section-shell bg-[#E6F2FF]">
+      <section className="section-shell bg-slate-950 text-white border-t border-white/10">
         <div className="container">
           <p className="eyebrow">Our Process</p>
-          <h2 className="mt-3 font-display text-3xl font-semibold text-slate-950">
+          <h2 className="mt-3 font-display text-3xl font-semibold text-white">
             6-Step Methodology from Discovery to Scale
           </h2>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {processSteps.map((step) => (
               <TiltCard key={step.number} className="rounded-2xl">
-                <article className="h-full rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-soft">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-slate-950 font-mono text-xs font-bold text-cyan-300">
+                <article className="h-full rounded-2xl border border-white/10 bg-slate-900/80 p-6 text-white shadow-soft transition-all duration-300 hover:border-cyan-400/50 hover:bg-slate-900">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-500/10 font-mono text-xs font-bold text-cyan-300">
                     {step.number}
                   </span>
-                  <h3 className="mt-4 font-display text-lg font-semibold text-slate-950">
+                  <h3 className="mt-4 font-display text-lg font-semibold text-white">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-6 text-brand-slate">
+                  <p className="mt-2 text-sm leading-6 text-slate-300">
                     {step.description}
                   </p>
                 </article>

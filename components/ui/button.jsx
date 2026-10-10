@@ -14,11 +14,11 @@ const buttonVariants = cva(
         secondary:
           "bg-secondary text-secondary-foreground shadow-soft hover:-translate-y-0.5 hover:bg-secondary/92",
         outline:
-          "border border-slate-300/80 bg-white/80 text-slate-900 shadow-soft hover:-translate-y-0.5 hover:border-primary/30 hover:text-primary",
+          "border border-white/15 bg-white/5 text-slate-100 shadow-soft hover:-translate-y-0.5 hover:border-cyan-400/40 hover:bg-white/10 hover:text-white",
         ghost:
-          "text-slate-700 hover:bg-slate-100 hover:text-slate-950",
+          "text-slate-300 hover:bg-white/10 hover:text-white",
         light:
-          "border border-white/10 bg-white/10 text-white shadow-glow hover:bg-white/20",
+          "border border-white/15 bg-white/10 text-white shadow-glow hover:bg-white/20",
       },
       size: {
         default: "h-11 px-5",

@@ -29,34 +29,34 @@ export function MobileAISection() {
   const content = t("home.operations");
 
   return (
-    <section className="bg-[#E6F2FF] py-8 text-slate-900">
+    <section className="bg-slate-950 py-8 text-white border-t border-white/10">
       <div className="container px-4">
         <header className="text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-cyan-700/20 bg-white/80 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-800 shadow-sm">
+          <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-300 shadow-sm">
             <span className="h-2 w-2 rounded-full bg-emerald-400" />
             {content.eyebrow}
           </span>
-          <h2 className="mt-4 font-display text-3xl font-semibold leading-tight text-slate-900">
+          <h2 className="mt-4 font-display text-3xl font-semibold leading-tight text-white">
             {content.title}
           </h2>
-          <p className="mt-4 text-sm leading-7 text-slate-700">{content.description}</p>
+          <p className="mt-4 text-sm leading-7 text-slate-300">{content.description}</p>
         </header>
 
         <div className="mt-6 grid gap-4">
-          <article className="rounded-2xl border border-slate-300/80 bg-white/90 p-5 shadow-md">
+          <article className="rounded-2xl border border-white/10 bg-slate-900/80 p-5 shadow-md text-white">
             <div className="flex items-center justify-between gap-3">
-              <h3 className="font-display text-base font-semibold text-slate-900">
+              <h3 className="font-display text-base font-semibold text-white">
                 {content.legacyTitle}
               </h3>
-              <span className="shrink-0 rounded-full bg-rose-50 p-2 text-rose-600">
+              <span className="shrink-0 rounded-full bg-rose-500/10 p-2 text-rose-400">
                 <ArrowRight className="h-4 w-4 rotate-45" />
               </span>
             </div>
-            <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+            <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-300">
               {content.legacyPoints.map((point) => (
                 <li key={point.label} className="flex items-start gap-2.5">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-rose-400" />
-                  <span><strong>{point.label}:</strong> {point.description}</span>
+                  <span><strong className="text-white">{point.label}:</strong> {point.description}</span>
                 </li>
               ))}
             </ul>
@@ -76,7 +76,7 @@ export function MobileAISection() {
               {content.aiPoints.map((point) => (
                 <li key={point.label} className="flex items-start gap-2.5">
                   <ShieldCheck className="mt-1 h-4 w-4 shrink-0 text-emerald-400" />
-                  <span><strong>{point.label}:</strong> {point.description}</span>
+                  <span><strong className="text-white">{point.label}:</strong> {point.description}</span>
                 </li>
               ))}
             </ul>
@@ -91,17 +91,17 @@ export function MobileTestimonials() {
   const { t } = useLanguage();
 
   return (
-    <section className="bg-[#E6F2FF] py-8 text-slate-900">
+    <section className="bg-slate-950 py-8 text-white border-t border-white/10">
       <div className="container px-4">
         <header className="mx-auto max-w-xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-cyan-700/20 bg-white/75 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-800 shadow-sm">
+          <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-300 shadow-sm">
             <span className="h-2 w-2 rounded-full bg-emerald-400" />
             {t("home.testimonials.eyebrow")}
           </span>
-          <h2 className="mt-4 font-display text-3xl font-semibold leading-tight text-slate-900">
+          <h2 className="mt-4 font-display text-3xl font-semibold leading-tight text-white">
             {t("home.testimonials.title")}
           </h2>
-          <p className="mt-4 text-sm leading-7 text-slate-700">
+          <p className="mt-4 text-sm leading-7 text-slate-300">
             {t("home.testimonials.description")}
           </p>
         </header>

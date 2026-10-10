@@ -21,7 +21,7 @@ export function ServicesGrid({
   const translatedServices = t("services.items");
 
   return (
-    <section className="section-shell relative isolate overflow-hidden bg-white/50">
+    <section className="section-shell relative isolate overflow-hidden bg-slate-950 text-white border-b border-white/10">
       <CyberCircuitBackground />
       <div className="container relative z-10">
         {showHeader ? (

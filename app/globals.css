@@ -4,23 +4,23 @@
 
 @layer base {
   :root {
-    --background: 216 33% 97%;
-    --foreground: 221 60% 10%;
-    --card: 0 0% 100%;
-    --card-foreground: 221 60% 10%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 221 60% 10%;
-    --primary: 214 92% 53%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 220 51% 13%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 217 26% 92%;
-    --muted-foreground: 219 18% 39%;
+    --background: 222 47% 3%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 6%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 6%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 191 97% 48%;
+    --primary-foreground: 222 47% 3%;
+    --secondary: 217 33% 15%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 12%;
+    --muted-foreground: 215 20% 65%;
     --accent: 191 97% 44%;
-    --accent-foreground: 221 60% 10%;
-    --border: 214 27% 86%;
-    --input: 214 27% 86%;
-    --ring: 214 92% 53%;
+    --accent-foreground: 222 47% 3%;
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 191 97% 48%;
     --radius: 1.2rem;
   }
 
@@ -30,15 +30,16 @@
 
   html {
     scroll-behavior: smooth;
+    color-scheme: dark;
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-slate-950 text-slate-100 antialiased;
     background-image:
-      radial-gradient(circle at 50% -12%, rgba(18, 119, 255, 0.14), transparent 34%),
-      radial-gradient(circle at 14% 18%, rgba(56, 198, 255, 0.1), transparent 20%),
-      radial-gradient(circle at 88% 14%, rgba(12, 35, 64, 0.08), transparent 24%),
-      linear-gradient(135deg, rgba(252, 253, 255, 0.99) 0%, rgba(243, 248, 255, 0.98) 28%, rgba(232, 242, 255, 0.96) 58%, rgba(246, 250, 255, 0.98) 100%);
+      radial-gradient(circle at 50% -8%, rgba(6, 182, 212, 0.12), transparent 42%),
+      radial-gradient(circle at 12% 18%, rgba(59, 130, 246, 0.08), transparent 30%),
+      radial-gradient(circle at 88% 14%, rgba(139, 92, 246, 0.06), transparent 26%),
+      linear-gradient(180deg, #030712 0%, #050b18 50%, #02050d 100%);
     min-height: 100vh;
     user-select: none;
     -webkit-user-select: none;
@@ -50,11 +51,11 @@
     inset: 0;
     pointer-events: none;
     background-image:
-      linear-gradient(to right, rgba(12, 35, 64, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(12, 35, 64, 0.03) 1px, transparent 1px);
-    background-size: 96px 96px;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.18), transparent 62%);
-    opacity: 0.16;
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), transparent 75%);
+    opacity: 0.25;
     z-index: -1;
   }
 
@@ -139,13 +140,13 @@
   }
 
   .surface-panel {
-    @apply rounded-[28px] border border-slate-200/70 shadow-soft backdrop-blur-md;
+    @apply rounded-[28px] border border-white/10 shadow-glow backdrop-blur-xl;
     backface-visibility: hidden;
     background: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.94) 0%,
-      rgba(245, 250, 255, 0.92) 42%,
-      rgba(235, 244, 255, 0.88) 100%
+      rgba(15, 23, 42, 0.92) 0%,
+      rgba(10, 16, 31, 0.88) 42%,
+      rgba(3, 7, 18, 0.96) 100%
     );
   }
 
@@ -161,17 +162,17 @@
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-primary;
+    @apply inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300;
   }
 
   .headline-gradient {
-    background: linear-gradient(135deg, #07111f 0%, #0c2340 45%, #1277ff 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 45%, #38bdf8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .muted-copy {
-    @apply text-[15px] leading-7 text-brand-slate md:text-base;
+    @apply text-[15px] leading-7 text-slate-300 md:text-base;
   }
 
   .hero-card {
@@ -179,7 +180,7 @@
   }
 
   .metric-chip {
-    @apply inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/90 px-4 py-2 text-sm font-medium text-slate-700 shadow-soft;
+    @apply inline-flex items-center gap-2 rounded-full border border-white/15 bg-slate-900/90 px-4 py-2 text-sm font-medium text-slate-200 shadow-soft;
   }
 
   .card-shine::before {
@@ -298,4 +299,27 @@ body{
   .relative.min-h-screen:has(.mobile-home-layout) > footer {
     display: none;
   }
+}
+
+/* Custom Sleek Scrollbar for Dropdowns and Containers */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(6, 182, 212, 0.45) transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(6, 182, 212, 0.4);
+  border-radius: 9999px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.75);
 }

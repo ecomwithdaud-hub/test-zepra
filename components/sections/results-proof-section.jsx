@@ -41,7 +41,7 @@ export function ResultsProofSection({
   const translatedProofs = content.proofs;
 
   return (
-    <section id="social-media-marketing" className="section-shell relative isolate scroll-mt-32 overflow-hidden bg-white/50">
+    <section id="social-media-marketing" className="section-shell relative isolate scroll-mt-32 overflow-hidden bg-slate-950 text-white border-b border-white/10">
       <CyberCircuitBackground />
       <div className="container relative z-10">
         <SectionHeading
@@ -59,17 +59,17 @@ export function ResultsProofSection({
             return (
               <Card
                 key={item.title}
-                className={`card-shine border-slate-200/80 bg-white/92 ${
+                className={`card-shine border border-white/10 bg-slate-900/80 text-white backdrop-blur-md transition-all duration-300 hover:border-cyan-400/50 hover:bg-slate-900 ${
                   index === 1 ? "lg:-translate-y-4" : ""
                 }`}
               >
                 <CardHeader className="gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white shadow-glow">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 shadow-glow">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <CardTitle>{translatedItem.title}</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-white">{translatedItem.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="text-sm leading-7 text-brand-slate">
+                <CardContent className="text-sm leading-7 text-slate-300">
                   {translatedItem.description}
                 </CardContent>
               </Card>
@@ -82,16 +82,16 @@ export function ResultsProofSection({
             const translatedProof = translatedProofs?.[index] ?? proof;
             return (
             <div key={proof.title} className="mb-6 break-inside-avoid">
-              <Card className="card-shine overflow-hidden border-slate-200/80 bg-white/94">
-                <div className="border-b border-slate-200/70 p-5">
-                  <Badge>{translatedProof.label}</Badge>
-                  <CardTitle className="mt-4 text-xl">{translatedProof.title}</CardTitle>
-                  <p className="mt-3 text-sm leading-7 text-brand-slate">
+              <Card className="card-shine overflow-hidden border border-white/10 bg-slate-900/85 text-white backdrop-blur-md transition-all duration-300 hover:border-cyan-400/50">
+                <div className="border-b border-white/10 p-5">
+                  <Badge variant="secondary" className="border border-cyan-400/30 bg-cyan-400/10 text-cyan-300">{translatedProof.label}</Badge>
+                  <CardTitle className="mt-4 text-xl text-white">{translatedProof.title}</CardTitle>
+                  <p className="mt-3 text-sm leading-7 text-slate-300">
                     {translatedProof.summary}
                   </p>
                 </div>
-                <div className="bg-slate-50 p-4">
-                  <div className="overflow-hidden rounded-[22px] border border-slate-200/70 bg-white shadow-soft">
+                <div className="bg-slate-950/80 p-4">
+                  <div className="overflow-hidden rounded-[22px] border border-white/10 bg-slate-950 shadow-soft">
                     <img
                       src={proof.image}
                       alt={proof.title}

@@ -248,7 +248,7 @@ export function SiteFooter() {
               {partners.map((partner) => (
                 <div
                   key={partner.mark}
-                  className="flex h-10 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-slate-900 shadow-sm transition-all duration-300 hover:shadow-md"
+                  className="flex h-10 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-white shadow-sm transition-all duration-300 hover:border-cyan-400/40 hover:bg-white/10"
                 >
                   <PartnerMark mark={partner.mark} />
                   {partner.mark === "shopify" ? (
