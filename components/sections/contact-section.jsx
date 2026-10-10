@@ -36,6 +36,26 @@ export function ContactSection({ showHeader = true }) {
           />
         ) : null}
 
+        {/* Velvet Rope Capacity Banner */}
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-cyan-500/20 bg-slate-900/90 px-5 py-3.5 shadow-xl backdrop-blur-md text-white">
+          <div className="flex items-center gap-3">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+            </span>
+            <div className="text-xs sm:text-sm font-medium">
+              <strong className="text-emerald-400 font-bold">Engineering Capacity: </strong>
+              <span>80% Committed • Accepting only 2 new client deployments for Q2</span>
+            </div>
+          </div>
+          <div className="hidden sm:flex items-center gap-2 text-xs text-slate-300">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-cyan-400" />
+            <span>Strict NDA Protected</span>
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-cyan-400" />
+            <span>Sub-2-Hour Direct SLA</span>
+          </div>
+        </div>
+
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           <div className="flex h-full flex-col justify-between rounded-2xl border border-slate-200/80 bg-white/95 p-7 shadow-lg backdrop-blur-md lg:col-span-5">
             <div>
@@ -127,6 +147,28 @@ export function ContactSection({ showHeader = true }) {
                     {t("contact.scheduleNow")}
                     <ArrowUpRight className="h-3.5 w-3.5" />
                   </span>
+                </Link>
+              </div>
+
+              {/* Founder Video Teardown Hook */}
+              <div className="mt-4 rounded-2xl border border-dashed border-cyan-500/40 bg-cyan-50/70 p-4">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-cyan-900">
+                  <span className="flex h-2 w-2 rounded-full bg-cyan-600" />
+                  Not Ready for a Sprint?
+                </div>
+                <h4 className="mt-1 font-display text-sm font-bold text-slate-900">
+                  Request Founder Daud's 5-Minute Video Teardown
+                </h4>
+                <p className="mt-1 text-xs text-slate-600 leading-relaxed">
+                  Send your current website URL via WhatsApp. Daud will record an unfiltered screen video exposing your conversion leaks and Core Web Vitals bottlenecks. 100% Free.
+                </p>
+                <Link
+                  href={`${siteMeta.whatsappLink}?text=${encodeURIComponent("Hi Daud, I'd like to request a 5-minute video teardown of my website. Here is my URL: ")}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-cyan-800 hover:text-cyan-950 transition-colors"
+                >
+                  Request Free Video Teardown <ArrowUpRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
             </div>

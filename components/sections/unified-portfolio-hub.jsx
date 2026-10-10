@@ -20,6 +20,9 @@ import { PortfolioPreview } from "@/components/sections/portfolio-preview";
 import { UsaDemoShowcase } from "@/components/sections/usa-demo-showcase";
 import { WikiRgShowcase } from "@/components/sections/wiki-rg-showcase";
 import { TiltCard } from "@/components/ui/TiltCard";
+import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
+import { ProjectRoiEstimator } from "@/components/ui/ProjectRoiEstimator";
+import { DisqualificationManifesto } from "@/components/sections/disqualification-manifesto";
 
 const hubTabs = [
   {
@@ -224,6 +227,15 @@ export function UnifiedPortfolioHub() {
           </div>
         </section>
       ) : null}
+
+      {/* Interactive Transformation Benchmark Slider */}
+      <BeforeAfterSlider />
+
+      {/* Interactive Project Scope, Timeline & Cost Terminal */}
+      <ProjectRoiEstimator />
+
+      {/* Velvet Rope Disqualification Manifesto & Written SLAs */}
+      <DisqualificationManifesto />
 
       <AeoStructuredAnswers
         pageUrl="https://gozepra.tech/portfolio"

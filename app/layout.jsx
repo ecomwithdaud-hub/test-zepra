@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { LanguageProvider } from "@/components/providers/language-provider";
 import { QuickConnectDock } from "@/components/ui/QuickConnectDock";
 import { TechCursor } from "@/components/ui/TechCursor";
+import { AcousticHaptics } from "@/components/ui/AcousticHaptics";
 import { siteMeta } from "@/lib/site";
 
 import "./globals.css";
@@ -58,6 +59,7 @@ export default function RootLayout({ children }) {
         <LanguageProvider>
           <TechCursor />
           <QuickConnectDock />
+          <AcousticHaptics />
           <div className="relative min-h-screen overflow-x-clip">
             <SiteHeader />
             <div aria-hidden="true" className="h-24" />

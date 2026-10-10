@@ -12,6 +12,7 @@ import {
 import { Logo } from "@/components/shared/logo";
 import { useLanguage } from "@/components/providers/language-provider";
 import { siteMeta, socialLinks } from "@/lib/site";
+import { GlobalEdgeTelemetry } from "@/components/ui/GlobalEdgeTelemetry";
 
 function XIcon({ className }) {
   return (
@@ -207,6 +208,11 @@ export function SiteFooter() {
               {siteMeta.whatsappNumber}
             </a>
           </div>
+        </div>
+
+        {/* Global Edge Telemetry Bar */}
+        <div className="py-6 border-b border-slate-800/80">
+          <GlobalEdgeTelemetry />
         </div>
 
         <nav aria-label="Footer navigation" className="py-8">
