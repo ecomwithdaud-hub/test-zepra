@@ -12,17 +12,12 @@ import {
   Sparkles,
 } from "lucide-react";
 
-import { AeoStructuredAnswers } from "@/components/sections/aeo-structured-answers";
 import { CaseStudySpotlight } from "@/components/sections/case-study-spotlight";
-import { ContactSection } from "@/components/sections/contact-section";
 import { EnterpriseCaseStudies } from "@/components/sections/enterprise-case-studies";
 import { PortfolioPreview } from "@/components/sections/portfolio-preview";
 import { UsaDemoShowcase } from "@/components/sections/usa-demo-showcase";
 import { WikiRgShowcase } from "@/components/sections/wiki-rg-showcase";
 import { TiltCard } from "@/components/ui/TiltCard";
-import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
-import { ProjectRoiEstimator } from "@/components/ui/ProjectRoiEstimator";
-import { DisqualificationManifesto } from "@/components/sections/disqualification-manifesto";
 
 const hubTabs = [
   {
@@ -227,24 +222,6 @@ export function UnifiedPortfolioHub() {
           </div>
         </section>
       ) : null}
-
-      {/* Interactive Transformation Benchmark Slider */}
-      <BeforeAfterSlider />
-
-      {/* Interactive Project Scope, Timeline & Cost Terminal */}
-      <ProjectRoiEstimator />
-
-      {/* Velvet Rope Disqualification Manifesto & Written SLAs */}
-      <DisqualificationManifesto />
-
-      <AeoStructuredAnswers
-        pageUrl="https://gozepra.tech/portfolio"
-        pageTitle="Portfolio & Engineering Case Studies | Zepra Tech"
-        aiSummaryTitle="What is included in the Zepra Tech Portfolio & Case Studies Hub?"
-        aiSummaryBody="The Zepra Tech Portfolio Hub brings together 24 live interactive US business demo websites, full-stack institutional platforms like Wiki RG, e-commerce transformations, AI automation architectures, and verified growth marketing case studies."
-      />
-
-      <ContactSection showHeader={false} />
     </div>
   );
 }
