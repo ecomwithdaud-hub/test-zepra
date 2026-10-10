@@ -4,7 +4,6 @@ import { DevCrafterHomeExperience } from "@/components/sections/devcrafter-home-
 import { HomeHero } from "@/components/sections/home-hero";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { TheShiftSection } from "@/components/sections/TheShiftSection";
-import { AiGrowthDominance } from "@/components/sections/ai-growth-dominance";
 import { WhyUs } from "@/components/sections/why-us";
 import MobileHomePage from "@/components/MobileHomePage";
 import { siteMeta } from "@/lib/site";
@@ -47,7 +46,6 @@ function DesktopHome() {
       <HomeHero />
       <DevCrafterHomeExperience />
       <TheShiftSection />
-      <AiGrowthDominance />
       <WhyUs />
       <TestimonialsSection />
       <AeoStructuredAnswers

@@ -47,8 +47,8 @@ const hubTabs = [
   },
   {
     id: "growth-creative",
-    label: "Marketing & Creative Proof",
-    badge: "Campaigns",
+    label: "SEO, Marketing & Growth Proof",
+    badge: "SEO / Ads / ROI",
     icon: Megaphone,
   },
 ];
@@ -62,6 +62,8 @@ export function UnifiedPortfolioHub() {
     activeTab === "all" || activeTab === "client-websites";
   const showGrowthCreative =
     activeTab === "all" || activeTab === "growth-creative";
+  const showGrowthCaseStudies =
+    activeTab === "all" || activeTab === "growth-creative" || activeTab === "case-studies";
 
   return (
     <div className="bg-slate-950 text-white">
@@ -220,13 +222,15 @@ export function UnifiedPortfolioHub() {
                 </Link>
               </TiltCard>
             </div>
-
-            {/* AI Growth Engine, SEO/AEO/GEO & Paid Ads Transformation Case Studies */}
-            <div className="mt-16">
-              <AiGrowthDominance />
-            </div>
           </div>
         </section>
+      ) : null}
+
+      {/* Section 5: AI Growth Engine, SEO/AEO/GEO & Paid Ads Transformation Case Studies */}
+      {showGrowthCaseStudies ? (
+        <div id="ai-growth-dominance" className="border-t border-white/10">
+          <AiGrowthDominance />
+        </div>
       ) : null}
     </div>
   );
