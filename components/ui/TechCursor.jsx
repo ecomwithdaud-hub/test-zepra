@@ -3,15 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 
 export function TechCursor() {
-  const dotRef = useRef(null);
+  const cursorRef = useRef(null);
   const ringRef = useRef(null);
-  const rippleRef = useRef(null);
 
   const [enabled, setEnabled] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+  const [isClickable, setIsClickable] = useState(false);
   const [isTextMode, setIsTextMode] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
+  const [isMouseDown, setIsMouseDown] = useState(false);
   const [cursorLabel, setCursorLabel] = useState("");
 
   useEffect(() => {
@@ -38,12 +37,12 @@ export function TechCursor() {
 
       if (!isVisible) setIsVisible(true);
 
-      // Instant pinpoint tracking for the micro-dot
-      if (dotRef.current) {
-        dotRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+      // Instant pinpoint tracking for center point
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
       }
 
-      // Check hovered elements
+      // Check hovered element
       const target = e.target;
       if (target instanceof Element) {
         const customCursorEl = target.closest("[data-cursor]");
@@ -51,41 +50,38 @@ export function TechCursor() {
         setCursorLabel(customText);
 
         const isInput = Boolean(
-          target.closest('input, textarea, select, [contenteditable="true"]')
+          target.closest('input:not([type="submit"]):not([type="button"]), textarea, [contenteditable="true"]')
         );
         setIsTextMode(isInput);
 
         const isInteractive = Boolean(
           customText ||
             target.closest(
-              'a, button, [role="button"], input[type="submit"], input[type="button"], label, .interactive-cursor'
+              'a, button, [role="button"], input[type="submit"], input[type="button"], label, select, summary, .cursor-pointer, [data-clickable="true"]'
             )
         );
-        setIsHovered(isInteractive && !isInput);
+        setIsClickable(isInteractive && !isInput);
       } else {
         setCursorLabel("");
-        setIsHovered(false);
+        setIsClickable(false);
         setIsTextMode(false);
       }
     };
 
-    const onMouseDown = () => setIsClicked(true);
-    const onMouseUp = () => setIsClicked(false);
+    const onMouseDown = () => setIsMouseDown(true);
+    const onMouseUp = () => setIsMouseDown(false);
 
     const onMouseLeave = () => setIsVisible(false);
     const onMouseEnter = () => setIsVisible(true);
 
-    // Smooth fluid lerp animation for the outer luxury ring
+    // Responsive lerp for outer follower ring
     const animate = () => {
-      // 0.16 lerp factor provides fluid momentum without excessive lag
-      ringX += (mouseX - ringX) * 0.16;
-      ringY += (mouseY - ringY) * 0.16;
+      // 0.22 lerp factor gives snappy, cohesive follower physics
+      ringX += (mouseX - ringX) * 0.22;
+      ringY += (mouseY - ringY) * 0.22;
 
       if (ringRef.current) {
         ringRef.current.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
-      }
-      if (rippleRef.current) {
-        rippleRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
       }
 
       frameId = window.requestAnimationFrame(animate);
@@ -114,54 +110,100 @@ export function TechCursor() {
   return (
     <div
       aria-hidden="true"
-      className={`pointer-events-none fixed inset-0 z-[99999] overflow-hidden transition-opacity duration-300 ${
-        isVisible ? "opacity-100" : "opacity-0"
+      className={`pointer-events-none fixed inset-0 z-[999999] overflow-hidden transition-opacity duration-200 ${
+        isVisible && !isTextMode ? "opacity-100" : "opacity-0"
       }`}
-      style={{ mixBlendMode: "difference" }}
     >
-      {/* Precision Micro-Dot */}
-      <div
-        ref={dotRef}
-        className={`fixed top-0 left-0 -ml-[3.5px] -mt-[3.5px] h-[7px] w-[7px] rounded-full bg-white will-change-transform transition-[opacity,transform] duration-150 ${
-          isTextMode || cursorLabel
-            ? "scale-0 opacity-0"
-            : isHovered
-            ? "scale-50 opacity-0"
-            : isClicked
-            ? "scale-75"
-            : "scale-100 opacity-100"
-        }`}
-      />
-
-      {/* Trailing Fluid Luxury Inverting Ring / Pill Badge */}
+      {/* Lagging Outer Follower Ring */}
       <div
         ref={ringRef}
-        className={`fixed top-0 left-0 flex items-center justify-center will-change-transform transition-[width,height,margin,border-radius,background-color,border-color,box-shadow,transform] duration-200 ease-out ${
-          isTextMode
-            ? "scale-0 opacity-0"
-            : cursorLabel
-            ? "-ml-14 -mt-5 h-10 min-w-[112px] px-4 rounded-full bg-white text-black border-0 shadow-[0_0_30px_rgba(255,255,255,0.7)]"
-            : isHovered
-            ? "-ml-7 -mt-7 h-14 w-14 rounded-full bg-white border-0 shadow-[0_0_24px_rgba(255,255,255,0.4)]"
-            : isClicked
-            ? "-ml-4 -mt-4 h-8 w-8 rounded-full border border-white/90 bg-white/30"
-            : "-ml-[17px] -mt-[17px] h-[34px] w-[34px] rounded-full border border-white/70 bg-transparent"
-        }`}
+        className="fixed top-0 left-0 will-change-transform pointer-events-none"
       >
-        {cursorLabel ? (
-          <span className="font-display text-[10px] font-black uppercase tracking-[0.22em] text-slate-950 select-none">
-            {cursorLabel}
-          </span>
-        ) : null}
+        <div
+          className={`-translate-x-1/2 -translate-y-1/2 rounded-full transition-all duration-200 ease-out flex items-center justify-center ${
+            isClickable
+              ? "h-12 w-12 border-2 border-cyan-400 bg-cyan-400/15 shadow-[0_0_20px_rgba(6,182,212,0.65)]"
+              : isMouseDown
+              ? "h-7 w-7 border-2 border-cyan-400 bg-cyan-400/30 shadow-[0_0_15px_rgba(6,182,212,0.8)]"
+              : "h-9 w-9 border-2 border-cyan-400/90 bg-cyan-500/10 shadow-[0_0_12px_rgba(6,182,212,0.45)]"
+          }`}
+          style={{
+            filter: "drop-shadow(0 2px 5px rgba(0,0,0,0.6))",
+          }}
+        />
       </div>
 
-      {/* Click Micro-Ripple Wave */}
+      {/* Pinpoint Center Target (Circle-in-Circle OR Morphing into + Sign) */}
       <div
-        ref={rippleRef}
-        className={`fixed top-0 left-0 -ml-6 -mt-6 h-12 w-12 rounded-full border border-white/60 pointer-events-none will-change-transform transition-all duration-300 ease-out ${
-          isClicked ? "scale-125 opacity-100" : "scale-50 opacity-0"
-        }`}
-      />
+        ref={cursorRef}
+        className="fixed top-0 left-0 will-change-transform pointer-events-none"
+      >
+        <div className="relative -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+          {/* STATE A: Normal Mode -> Circle in a Circle */}
+          <div
+            className={`transition-all duration-200 ease-out flex items-center justify-center ${
+              isClickable ? "scale-0 opacity-0" : "scale-100 opacity-100"
+            }`}
+          >
+            {/* Inner Solid Glow Dot */}
+            <div
+              className={`rounded-full bg-cyan-300 ring-1 ring-slate-950 transition-all duration-150 ${
+                isMouseDown ? "h-3.5 w-3.5 bg-white" : "h-2.5 w-2.5"
+              }`}
+              style={{
+                boxShadow: "0 0 10px #22d3ee, 0 1px 3px rgba(0,0,0,0.8)",
+              }}
+            />
+          </div>
+
+          {/* STATE B: Clickable Mode -> Morph into Glowing + Sign */}
+          <div
+            className={`absolute flex items-center justify-center transition-all duration-200 ease-out ${
+              isClickable ? "scale-100 opacity-100" : "scale-0 opacity-0"
+            }`}
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              className={`h-6 w-6 text-cyan-300 transition-transform duration-150 ease-out ${
+                isMouseDown ? "rotate-45 scale-90 text-white" : "rotate-0 scale-100"
+              }`}
+              style={{
+                filter:
+                  "drop-shadow(0 0 8px rgba(6,182,212,0.95)) drop-shadow(0 1px 3px rgba(0,0,0,0.9))",
+              }}
+            >
+              {/* Bold + Sign Crosshair */}
+              <line
+                x1="12"
+                y1="3.5"
+                x2="12"
+                y2="20.5"
+                strokeWidth="3.2"
+                strokeLinecap="round"
+              />
+              <line
+                x1="3.5"
+                y1="12"
+                x2="20.5"
+                y2="12"
+                strokeWidth="3.2"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
+
+          {/* Optional Action Label Pill (e.g. "EXPLORE", "VIEW LIVE", "DRAG") */}
+          {cursorLabel && isClickable && (
+            <div className="absolute top-7 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-cyan-400/60 bg-slate-950/95 px-2.5 py-0.5 shadow-xl backdrop-blur-md">
+              <span className="text-[9px] font-black uppercase tracking-[0.2em] text-cyan-300">
+                {cursorLabel}
+              </span>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
