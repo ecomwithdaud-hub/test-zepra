@@ -2,6 +2,7 @@ import { AeoStructuredAnswers } from "@/components/sections/aeo-structured-answe
 import { ContactSection } from "@/components/sections/contact-section";
 import { DevCrafterHomeExperience } from "@/components/sections/devcrafter-home-experience";
 import { HomeHero } from "@/components/sections/home-hero";
+import { HumanBusinessBridge } from "@/components/sections/human-business-bridge";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { TheShiftSection } from "@/components/sections/TheShiftSection";
 import { WhyUs } from "@/components/sections/why-us";
@@ -44,6 +45,7 @@ function DesktopHome() {
   return (
     <>
       <HomeHero />
+      <HumanBusinessBridge />
       <DevCrafterHomeExperience />
       <TheShiftSection />
       <WhyUs />
