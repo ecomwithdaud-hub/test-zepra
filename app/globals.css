@@ -73,20 +73,22 @@
     -webkit-user-select: text;
   }
 
-  /* Luxury Agency Custom Cursor - Enabled on Mouse / Desktop Devices */
-  @media (pointer: fine) {
-    *,
-    *::before,
-    *::after {
-      cursor: none !important;
-    }
+  /* Custom Cursor - Active only when custom cursor is confirmed running */
+  html.custom-cursor-active,
+  html.custom-cursor-active body,
+  html.custom-cursor-active a,
+  html.custom-cursor-active button,
+  html.custom-cursor-active [role="button"],
+  html.custom-cursor-active [data-cursor],
+  html.custom-cursor-active .cursor-pointer {
+    cursor: none !important;
+  }
 
-    input,
-    textarea,
-    select,
-    [contenteditable="true"] {
-      cursor: text !important;
-    }
+  html.custom-cursor-active input,
+  html.custom-cursor-active textarea,
+  html.custom-cursor-active select,
+  html.custom-cursor-active [contenteditable="true"] {
+    cursor: text !important;
   }
 
   section,
