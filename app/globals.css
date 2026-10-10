@@ -73,6 +73,22 @@
     -webkit-user-select: text;
   }
 
+  /* Luxury Agency Custom Cursor - Enabled on Mouse / Desktop Devices */
+  @media (pointer: fine) {
+    *,
+    *::before,
+    *::after {
+      cursor: none !important;
+    }
+
+    input,
+    textarea,
+    select,
+    [contenteditable="true"] {
+      cursor: text !important;
+    }
+  }
+
   section,
   header,
   footer {

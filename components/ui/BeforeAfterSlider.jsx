@@ -159,6 +159,7 @@ export function BeforeAfterSlider() {
           {/* Draggable Divider Handle */}
           <div
             className="absolute inset-y-0 z-30 flex cursor-ew-resize items-center justify-center"
+            data-cursor="DRAG"
             style={{ left: `${sliderPos}%` }}
             onMouseDown={() => setIsDragging(true)}
             onTouchStart={() => setIsDragging(true)}
