@@ -18,6 +18,7 @@ import { PortfolioPreview } from "@/components/sections/portfolio-preview";
 import { UsaDemoShowcase } from "@/components/sections/usa-demo-showcase";
 import { WikiRgShowcase } from "@/components/sections/wiki-rg-showcase";
 import { TiltCard } from "@/components/ui/TiltCard";
+import { AiGrowthDominance } from "@/components/sections/ai-growth-dominance";
 
 const hubTabs = [
   {
@@ -218,6 +219,11 @@ export function UnifiedPortfolioHub() {
                   </div>
                 </Link>
               </TiltCard>
+            </div>
+
+            {/* AI Growth Engine, SEO/AEO/GEO & Paid Ads Transformation Case Studies */}
+            <div className="mt-16">
+              <AiGrowthDominance />
             </div>
           </div>
         </section>

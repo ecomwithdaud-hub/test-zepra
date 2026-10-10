@@ -7,6 +7,7 @@ import {
   MobileFooter,
   MobileTestimonials,
 } from "@/components/sections/mobile-home-sections";
+import { AiGrowthDominance } from "@/components/sections/ai-growth-dominance";
 import { WhyUs } from "@/components/sections/why-us";
 
 export default function MobileHomePage() {
@@ -15,6 +16,7 @@ export default function MobileHomePage() {
       <HomeHero />
       <DevCrafterHomeExperience />
       <MobileAISection />
+      <AiGrowthDominance />
       <WhyUs />
       <MobileTestimonials />
       <AeoStructuredAnswers
